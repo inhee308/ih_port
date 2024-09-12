@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+/* 공통으로 사용하는 변수 선언 */
+:root{
+    --blcolor: #346094;
+    --skycolor: #459BBF;
+}
+body {
+    padding-bottom: 500px;
+}
+.row_c {
+    max-width: 1240px;
+    margin: 0 auto;
+    
+}
+
+#gnb {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+}
+
+#navi_wrap {
+    display: flex;
+}
+
+/* 로고 */
+
+#logo {
+    margin-right: 20px;
+    padding-top: 35px;
+    width: 150px;
+}
+
+#logo img {
+    width: 100%;
+}
+
+/* 네비게이션 */
+
+#navi {
+    flex-grow: 1;
+    margin-top: 35px;
+}
+
+.main_navi {
+    display: flex;
+}
+
+.main_navi>li {
+    width: 20%;
+    position: relative;
+}
+
+.main_navi>li>a {
+    display: block;
+    text-align: center;
+    height: 65px;
+    line-height: 65px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.main_navi>li:hover>a {
+    color: #68F6FF;
+}
+
+.main_navi>li>a span {
+    display: inline-block;
+    /* inline-block : 텍스트길이, block : 메뉴길이 */
+    position: relative;
+}
+
+.main_navi>li>a span::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid #FFF;
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+
+.main_navi>li:hover>a span::after {
+    transform: scaleX(1);
+}
+
+
+/* 서브메뉴 스타일 */
+#navi .sub_navi {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    display: none;
+    height: 260px;
+    z-index: 101;
+}
+
+#navi .sub_navi ul {
+    padding: 5px 0;
+}
+
+#navi .sub_navi ul li a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 0.9em;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}
+
+#navi .main_navi>li:hover .sub_navi ul li a:hover {
+    color: #68F6FF;
+    font-weight: 400;
+}
+
+/* 메뉴 100% 배경 스타일 */
+#navi_bg {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background: rgba(52, 95, 148, 0.5);
+    height: 160px;
+    top: 100px;
+    display: none;
+}
+
+/* 동영상 /////////////////////// */
+#video_box video {
+    width: 100%;
+}
+
+/* 천지차이나는 진짜 이유 ////////////////// */
+#sec_1 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 1000px;
+}
+
+#sec_1::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 200px;
+    background: url(../img/main/water_bg.png) repeat;
+    opacity: 0.1;
+    z-index: -999;    
+}
+
+#reason {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+#reason hgroup {
+    padding-top: 50px;
+    text-align: right;
+}
+
+#reason h1 span {
+    font-size: 28px;
+}
+
+#reason h1 span:nth-child(1) {
+    font-size: 36px;
+    color: var(--skycolor);
+}
+
+#reason h1 span:nth-child(3) {
+    font-size: 36px;
+    color: var(--blcolor);
+}
+
+#reason h2 {
+    margin-right: 20px;
+    padding-bottom: 150px;
+}
+
+#reason h2 span {
+    font-size: 16px;
+}
+
+#reason h2 span:nth-child(2) {
+    color: var(--blcolor);
+}
+
+.reason_img {    
+    display: flex;    
+}
+
+
+.reason_img figure {
+    transform-origin: center bottom;
+    transition: 0.5s;
+    width: 30%;
+}
+
+.active{
+    scale: 1.1;    
+    margin-bottom: 25px;
+    overflow: visible;
+}
+.reason_img figure:hover img{
+    box-shadow: 5px 5px 5px rgb(73, 73, 73);
+}
+.reason_img figure p {
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 18px;
+    display: none;
+}
+
+.reason_img figure p span.blue{
+    color: var(--blcolor);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/*  백산수를 소개합니다/////////////////*/
+
+#sec_2 .sky{
+    color: var(--skycolor);
+    font-size: 36px;
+}
+#sec_2 .prod{
+    padding-top: 150px;
+}
+#sec_2 .prod h1{
+    text-align: left;
+    font-size: 28px;
+    position: relative;
+}
+#sec_2 .prod h1::before{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 23px;
+    left: -165px;
+    background: #F5F5F5;
+    z-index: -999;
+    border-radius: 0 10px 10px 0;
+}
+#sec_2 .prod h1::after{
+    content: '';
+    position: absolute;
+    width: 965px;
+    height: 2px;
+    top: 30px;
+    right: 0;
+    background: #F5F5F5;    
+}
+
+#sec_2 ul{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 70%;
+    height: 200px;
+    margin-left: 30%;
+    padding-top: 100px;
+}
+#sec_2 ul::before{
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 150px;
+    top: 200px;
+    right: 0;
+    background: #E4F2FF;
+    z-index: -999;    
+}
+
+#sec_2 ul li {
+    width: 33.333%;
+    height: 200px;
+    
+}
+#sec_2 ul li img{
+    width: 80%;    
+}

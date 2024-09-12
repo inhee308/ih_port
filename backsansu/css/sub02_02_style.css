@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* 해당 메뉴 활성화 */
+#sub_menu dl dd:nth-child(3) a {
+    display: block;
+    background: #E4F2FF;
+    color: #000;
+    font-weight: 400;
+}
+
+/* common 가로사이즈 수정 */
+#sub_menu dl dt,
+#sub_menu dl dd {
+    width: 25%;
+}
+
+
+/* 백산수무라벨 시작//////////////////////// */
+
+#non_label .non_label_wrap > p {
+    text-align: right;
+    margin-bottom: 50px;
+}
+#non_label  h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#non_label .non_label_wrap ul li{   
+    width: 70%;
+    margin: 0 auto; 
+}
+#non_label .non_label_wrap ul li:last-child{
+    padding-bottom: 100px;
+}
+#non_label .non_label_wrap ul li img{
+    width: 100%;
+}
+
+/* 반응형 스타일 /////////////////////////// */
+@media screen and (max-width:768px){
+    #non_label .non_label_wrap ul li{   
+        width: 100%;
+    }
+}
+@media screen and (max-width:620px){
+    #sub_menu dl dt{
+        width: 100%;
+    }
+    #sub_menu dl dd{
+        width: 33.333%;       
+    }
+    #pro_quantity{
+        padding-top: 0;
+    }
+    #non_label .non_label_wrap > p{
+        margin-right: 20px;
+    }
+    #sub_menu{
+        padding-top: 70px;
+    }
+    #non_label .non_label_wrap ul li:last-child{
+        padding-bottom: 30px;
+    }
+}

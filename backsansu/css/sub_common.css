@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+.row_c {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+#gnb {
+    background: #346094;    
+}
+#navi_bg {
+    background: #4374af;
+}
+
+/* sub_menu////////////////////////////////////////// */
+#sub_menu{
+    padding-top: 150px;
+}
+
+#sub_menu dl {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #346094;
+    /* border-radius: 30px; */
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+#sub_menu dl dt,
+#sub_menu dl dd {
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid #346094;
+    height: 60px;
+    line-height: 60px;
+    
+}
+
+#sub_menu dl dt {
+    background: #346094;
+}
+
+#sub_menu dl dt a {
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+}
+
+#sub_menu dl dd:last-child {
+    border-right: none;
+}
+
+#sub_menu dl dd a {
+    display: block;
+    font-size: 19px;
+    color: #333;
+    font-weight: 300;
+}
+
+/* #sub_menu dl dd:hover a {
+    display: block;
+    background: #E4F2FF;
+    color: #000;
+    font-weight: 400;
+} */
+
+/* 반응형 스타일 /////////////////////////// */
+
+@media screen and (max-width:620px){
+    #sub_menu dl{
+        flex-wrap: wrap;
+    }
+    #sub_menu dl dt{
+        width: 100%;
+    }
+    #sub_menu dl dt{
+        font-size: 22px;
+    }
+    #sub_menu dl dd{
+        width: 25%;
+        box-sizing: border-box;
+    }
+    #sub_menu dl dd a{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:410px){
+    #sub_menu dl dt{
+        font-size: 20px;
+    }
+    #sub_menu dl dd a{
+        font-size: 13px;
+    }
+    #sub_menu{
+        padding-top: 70px;
+    }
+    .ban_move{
+        margin-bottom: 10px !important;
+    }
+}
+

@@ -1,0 +1,371 @@
+@charset "utf-8";
+
+/* 공통으로 사용하는 변수 선언 */
+:root {
+    --blcolor: #346094;
+    --skycolor: #459BBF;
+}
+
+.row_c {
+    max-width: 1240px;
+    margin: 0 auto;
+
+}
+
+/* header ////////////////////////////////////// */
+
+#gnb {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+}
+
+#navi_wrap {
+    display: flex;
+    position: relative;
+}
+
+/* 로고 */
+
+#logo {
+    margin-right: 20px;
+    padding-top: 27px;
+    width: 150px;
+}
+
+#logo img {
+    width: 100%;
+}
+
+/* 로그인/ 회원가입 */
+.login_box {
+    display: flex;
+    height: 50px;
+    position: absolute;
+    right: 5%;
+   
+}
+.login_box .login a,.login_box .join a{
+    padding: 10px;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+}
+.login_box .login:hover a,.login_box .join:hover a{
+    color: #68F6FF;
+}
+
+
+/* 네비게이션 */
+
+#navi {
+    flex-grow: 1;
+    margin-top: 35px;
+    position: relative;
+}
+
+#navi .main_navi {
+    display: flex;
+}
+ 
+#navi .main_navi>li {
+    width: 20%;
+    position: relative;
+}
+
+#navi .main_navi>li>a {
+    display: block;
+    text-align: center;
+    height: 65px;
+    line-height: 65px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+#navi .main_navi>li:hover>a {
+    color: #68F6FF;
+}
+
+#navi .main_navi>li>a span {
+    display: inline-block;
+    /* inline-block : 텍스트길이, block : 메뉴길이 */
+    position: relative;
+}
+
+#navi .main_navi>li>a span::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid #FFF;
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+
+#navi .main_navi>li:hover>a span::after {
+    transform: scaleX(1);
+}
+
+
+/* 서브메뉴 스타일 */
+#navi .sub_navi {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    display: none;
+    height: 160px;
+    z-index: 101;
+}
+
+#navi .sub_navi ul {
+    padding: 5px 0;
+}
+
+#navi .sub_navi ul li a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 0.9em;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}
+
+#navi .main_navi>li:hover .sub_navi ul li a:hover {
+    color: #68F6FF;
+    font-weight: 400;
+}
+
+/* 메뉴 100% 배경 스타일 */
+#navi_bg {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background: rgba(52, 95, 148, 0.5);
+    height: 160px;
+    top: 100px;
+    display: none;
+    
+}
+
+
+/* 모바일 네비게이션 /////////////////////// */
+#mb_btn{
+    display: none;
+}
+
+#mb_navi_bg{
+    position: fixed;
+    right: -100%; 
+     /* 어두운 배경은 오른쪽에서 나타나게 처리해야함 */
+     /* 0 화면에 들오옴 -100% 나감 */
+}
+#mb_navi{
+    position: fixed;
+    right: -100%;
+    overflow: auto;
+    
+}
+
+
+/* footer///////////////////////// */
+footer{
+    background: #346094;
+    overflow: hidden;
+}
+footer .row_c{
+    position: relative;
+}
+footer > div {
+    display: flex;
+    padding:30px;
+}
+.foot_logo{
+    width: 130px;
+    display: flex;
+}
+.foot_logo img{
+    width: 40px;
+    height: 35px;
+}
+.foot_logo span{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.foot_text{
+    width: 75%;
+    padding-top: 10px;
+}
+.foot_text li{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 3px;
+}
+
+
+.foot_pro{
+    width: 10%;
+    position: absolute;
+    bottom: -44px;
+    right: 20px;
+}
+.foot_pro img{
+    width: 85px;
+}
+
+
+/* 반응형 스타일 */
+@media screen and (max-width: 420px) {
+    .foot_text{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 70px;
+    }
+    .foot_pro{
+        right: 50%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #gnb{
+        height: 60px;
+    }
+    #logo{
+        padding-top:10px;
+        padding-left: 10px;
+    }
+    #logo img{
+        width: 100px;
+    }
+    #navi_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .login_box{
+        display: none;
+    }
+    #navi{
+        display: none;
+    }
+    #mb_menu{
+        display: flex;
+    }
+    #mb_btn{
+        display: block;
+        padding-top: 10px;
+    }
+
+    #mb_btn span{
+        cursor: pointer;
+        color: #fff;
+        font-size: 40px;
+        margin-right: 10px;
+    }
+    #mb_login{
+        display: block;
+    }
+    #mb_login span{
+        cursor: pointer;
+        color: #fff;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+
+    .mb_close{
+        position: absolute;
+        top: 10px;
+        left: 10px; 
+        cursor: pointer;     
+    }
+    .mb_close span{
+        color: #fff;
+        font-size: 40px;
+    }
+
+
+    /* 모바일 어두운 배경, 닫기 */
+    #mb_navi_bg{
+        position: fixed;
+        /* right: -100%; */
+        width: 100%;
+        height: 100%;
+        top:0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 500;
+    }
+
+    /* 모바일메뉴 */
+    #mb_navi{
+        position: fixed;
+        /* right: -100%; */
+        background: #fff;
+        width: 70%;
+        top:0;
+        z-index: 501;
+     
+    }
+
+
+    /* 복제된 모바일 메뉴 스타일 */
+    .mb_navi_wrap .main_navi > li > a{
+        display: block;
+        padding-left: 10px;
+        height: 65px;
+        line-height: 65px;
+        color: #fff;
+        background: #346094 url(../img/main/up_down.png) no-repeat 100% 7px;
+        border-bottom: 2px solid #4478B7;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .mb_navi_wrap .main_navi > li > a.selected{
+        background-color: #2B4D76;
+        background-position: 100% -44px;
+    }
+
+    .mb_navi_wrap .main_navi > li .sub_navi{
+        display: none;
+    }
+
+    .mb_navi_wrap .main_navi > li .sub_navi ul li a{
+        display: block;
+        background: #4478B7;
+        padding: 5px 20px 5px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 400;
+        height: 55px;
+        line-height: 55px;
+    }
+
+    .mb_navi_wrap .main_navi > li .sub_navi ul li:hover a{
+        color: #68F6FF;
+    }
+
+    footer > div {
+        display: block;
+        padding: 16px;
+    }
+    .foot_text{
+        margin-right: auto;
+    }
+
+    .foot_text li:last-child {
+        display: none;
+    }
+
+  
+} /* 0-768 화면 */
+
+

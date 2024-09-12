@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="kp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-POST</title>
+
+    <!-- 자바스크립트 불러오기 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/epost.js"></script>
+
+    <!-- 파비콘 -->
+    <!-- <link rel="shortcut icon" href="img/main/logo.jpg"> -->
+    <link rel="stylesheet" href="css/epost_style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <div class="main-bg1"></div>
+    <div class="main-bg2"></div>
+
+    <header id="gnb">
+        <div id="navi_wrap">
+            <div class="h_top row_c">
+                <div id="logo"><a href="#"><img src="img/logo.png" alt="epost"></a>
+                </div><!-- logo -->
+                <div class="search">
+                    <form name="searchform" id="searchform" method="post">
+                        <input type="hidden" name="selectmenu" value="0" />
+                        <input type="text" id='query' name="query" placeholder="검색어를 입력하세요" title="검색어를 입력하세요" />
+                        <a href="#" id="btnTotalSearch" style="cursor: pointer;" title="검색"><span>검색</span></a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border">
+                <div class="h_bottom row_c">
+                    <!-- pc 네비게이션 -->
+                    <nav id="navi">
+                        <ul class="main_navi">
+                            <li><!-- 1 -->
+                                <a href="#"><span>우편</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="sub01_01.html">e그린우편</a></li>
+                                        <li><a href="sub01_01.html">생활정보홍보우편</a></li>
+                                        <li><a href="sub01_01.html">증명서비스</a></li>
+                                        <li><a href="sub01_01.html">간편사전접수</a></li>
+                                        <li><a href="sub01_01.html">부가서비스</a></li>
+                                        <li><a href="sub01_01.html">나의이용정보</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li><!-- 2 -->
+                                <a href="#"><span>우체국쇼핑</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="sub02_01.html">특산물</a></li>
+                                        <li><a href="sub02_02.html">꽃배달</a></li>
+                                        <li><a href="sub02_03.html">전통시장</a></li>
+                                        <li><a href="sub02_04.html">해외배송</a></li>
+                                        <li><a href="sub02_04.html">우체국B2B</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li><!-- 3 -->
+                                <a href="#"><span>방문접수.창구소포</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="sub03_01.html">방문접수소포(픽업)</a></li>
+                                        <li><a href="sub03_01.html">창구소포접수</a></li>
+                                        <li><a href="sub03_01.html">착불배달우편물</a></li>
+                                        <li><a href="sub03_01.html">이용안내</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li><!-- 4 -->
+                                <a href="#"><span>EMS국제우편</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="sub04_01.html">EMS국제우편예약</a></li>
+                                        <li><a href="sub04_02.html">국가별요금안내</a></li>
+                                        <li><a href="sub04_02.html">통관절차대행수수료</a></li>
+                                        <li><a href="sub04_02.html">서비스안내</a></li>
+                                        <li><a href="sub04_02.html">국가별발송조건안내</a></li>
+                                        <li><a href="sub04_02.html">유용한국제특송정보</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li><!-- 5 -->
+                                <a href="#"><span>우표.엽서.카드</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">기념우표사전예약</a></li>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">우표류</a></li>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">엽서류</a></li>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">축하카드류</a></li>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">나의이용정보</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li><!-- 6 -->
+                                <a href="#"><span>모바일우편함</span></a>
+                                <nav class="sub_navi">
+                                    <ul>
+                                        <li><a href="http://ihwork.dothome.co.kr/xe/sub05_01_notice">서비스안내</a></li>
+
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="right_link">
+                        <ul class="link_list">
+                            <li><a href="#">마이페이지</a></li>
+                            <li><a href="#">로그인</a></li>
+                        </ul>
+                        <a class="menu_trigger" href="#">전체메뉴<span></span><span></span><span></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 모바일 헤더의 로그인, 모바일 메뉴 아이콘
+            <div id="mb_menu">
+                <div id="mb_btn">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </div>
+            </div> -->
+
+        </div><!-- navi_wrap -->
+
+
+        <div id="mb_navi_bg">
+            <!-- <div>
+                <div id="logo"><a href="bif_main.html"><img src="img/logo2.png" alt="우체국로고"></a>
+                </div>
+            </div> -->
+            <!-- 모바일 네비게이션 복사 영역 -->
+            <div id="mb_navi">
+                <nav class="mb_navi_wrap">
+                    <!-- pc:#navi = mobile navi copy : .mb_navi_wrap 안의 ul -->
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Swiper -->
+    <div id="slide" class="row_c">
+        <div class="swiper sw1 pc s_left">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/slide02.png" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/test05.jpg" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/test02.jpg" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/test03.jpg" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/test04.jpg" alt="main0"></div>
+                <!-- <div class="swiper-slide"><img src="img/slide05.png" alt="main0"></div> -->
+            </div>
+            <!-- Add Pagination 페이지버튼 이미지갯수대로 자동생성됨-->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="control">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="swiper sw1 mo s_left">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/slide01_m.png" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/slide02_m.png" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/slide03_m.png" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/slide04_m.png" alt="main0"></div>
+                <div class="swiper-slide"><img src="img/slide05_m.png" alt="main0"></div>
+                <!-- <div class="swiper-slide"><img src="img/slide05.png" alt="main0"></div> -->
+            </div>
+            <!-- Add Pagination 페이지버튼 이미지갯수대로 자동생성됨-->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="control">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div class="s_rig">
+            <section id="sec_01" class="row_c">
+                <div class="sec01_box">
+                    <div class="sec01_left">
+                        <div>
+                            <h1>배송조회</h1>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <span class="material-symbols-outlined">
+                                            barcode
+                                        </span>
+                                    </figure>
+                                    <p>등기번호조회</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <span class="material-symbols-outlined">
+                                            call
+                                        </span>
+                                    </figure>
+                                    <p>전화번호조회</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <span class="material-symbols-outlined">
+                                            quick_reference_all
+                                        </span>
+                                    </figure>
+                                    <p>우편요금조회</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sec01_rig">
+                        <div>
+                            <h1>우체국접수</h1>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/inpakage.png" alt="국내소포">
+                                    </figure>
+                                    <p>국내소포</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/outpakage.png" alt="국제우편">
+                                    </figure>
+                                    <p>국제우편</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/inletter.png" alt="국내등기">
+                                    </figure>
+                                    <p>국내등기</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <h2 class="sec03 row_c">자주 찾는 서비스</h2>
+    <div class="bg">
+        <section id="sec_03" class="row_c">
+
+            <div class="service_area row_c">
+
+                <ul>
+                    <li class="serv_01">
+                        <a href="#">
+                            <figure></figure>
+                            <p>착불요금결제</p>
+                        </a>
+
+                    </li>
+                    <li class="serv_02">
+                        <a href="#">
+                            <figure></figure>
+                            <p>우표.엽서.카드</p>
+                        </a>
+                    </li>
+                    <li class="serv_03">
+                        <a href="#">
+                            <figure></figure>
+                            <p>알뜰폰</p>
+                        </a>
+                    </li>
+                    <li class="serv_04">
+                        <a href="#">
+                            <figure></figure>
+                            <p>주거이전서비스</p>
+                        </a>
+                    </li>
+                    <li class="serv_05">
+                        <a href="#">
+                            <figure></figure>
+                            <p>우체국 찾기</p>
+                        </a>
+                    </li>
+                    <li class="serv_06">
+                        <a href="#">
+                            <figure></figure>
+                            <p>우편번호 찾기</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+
+
+    <section id="sec_02">
+        <div id="tab_container">
+            <div class="tab_tit row_c">
+                <h2></h2>
+                <ul class="tab_btn">
+                    <li><a href="#">쇼핑</a></li>
+                    <li><a href="#">축하카드</a></li>
+                    <li><a href="#">우표</a></li>
+                </ul>
+            </div>
+            <div class="border2">
+                <div class="tab_body row_c">
+                    <div class="pro_box"><!-- 1 -->
+                        <h3></h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_01.JPG" alt="복숭아"></figure>
+                                    <p class="pro_name">털복숭아 딱딱한 백도 복숭아 2kg/4kg </p>
+                                    <p class="pro_pri"><span>24,000</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_02.jpg" alt="민물장어"></figure>
+                                    <p class="pro_name">손질 민물장어 국내산 자포니카</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_03.jpg" alt="감자"></figure>
+                                    <p class="pro_name">[제철] 보성회천 햇감자 3kg</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_04.jpg" alt="한우"></figure>
+                                    <p class="pro_name">대정한우 저지방 한우 불고기&국거리 300g</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_05.jpg" alt="자두"></figure>
+                                    <p class="pro_name">여름을 알리는 새콤달콤 영동 자두 2kg</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/prod_06.jpg" alt="토마토"></figure>
+                                    <p class="pro_name">[가람농장] 보성 완숙 토마토 5kg</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card_box"><!-- 2 -->
+                        <h3></h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_01.jpg" alt="축하카드1"></figure>
+                                    <p class="pro_name">초코축하 팝업 케이트</p>
+                                    <p class="pro_pri"><span>24,000</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_02.jpg" alt="축하카드2"></figure>
+                                    <p class="pro_name">꽃밭의 축제</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_03.jpg" alt="축하카드3"></figure>
+                                    <p class="pro_name">꽃바구니</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_04.jpg" alt="축하카드4"></figure>
+                                    <p class="pro_name">꽃과 선율</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_02.jpg" alt="축하카드2"></figure>
+                                    <p class="pro_name">꽃밭의 축제</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/card_03.jpg" alt="축하카드3"></figure>
+                                    <p class="pro_name">꽃바구니</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="post_box"><!-- 3 -->
+                        <h3></h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_01.jpg" alt="하늘산책로우표"></figure>
+                                    <p class="pro_name">하늘 산책로</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_02.jpg" alt="해양보호생물우표"></figure>
+                                    <p class="pro_name">해양보호생물</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_03.jpg" alt="부모님사랑해요우표"></figure>
+                                    <p class="pro_name">부모님사랑해요</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_04.jpg" alt="핑크퐁과 아기상어"></figure>
+                                    <p class="pro_name">핑크퐁과 아기상어</p>
+                                    <p class="pro_pri"><span>4,300원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_05.jpg" alt="해양보호생물우표"></figure>
+                                    <p class="pro_name">해양보호생물</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="img/post_06.jpg" alt="부모님사랑해요우표"></figure>
+                                    <p class="pro_name">부모님사랑해요</p>
+                                    <p class="pro_pri"><span>24,000원</span><span>18000원</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <section id="sec_04" class="row_c">
+        <div class="service_wrap">
+            <div class="service_link">
+                <h2>한눈에 보는 서비스</h2>
+                <ul>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico01.jpg"
+                                alt="온라인상품권"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico02.jpg"
+                                alt="모바일앱 다운로드"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico03.jpg"
+                                alt="가격대"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico04.jpg"
+                                alt="지역브랜드관"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico05.jpg"
+                                alt="레시피"></a></li>
+                </ul>
+            </div><!-- service_link end -->
+            <div class="service_link">
+                <h2>특별한 매장 소개</h2>
+                <ul>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico06.jpg"
+                                alt="초특가"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico07.jpg"
+                                alt="PB상품관"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico08.jpg"
+                                alt="신규상품"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico09.jpg"
+                                alt="헬스케어"></a></li>
+                    <li><a href="#"><img
+                                src="https://image.epost.go.kr/epostshop/eventImg/fo/main/template/service_ico10.jpg"
+                                alt="군장병관"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="event_title">
+            <h2>NEW 기획전 소개</h2>
+            <span class="material-symbols-outlined event_btn">
+                add
+            </span>
+        </div>
+        <div class="event_ban">
+            <figure><a href="#"><img src="img/event_01.jpg" alt="뽀송뽀송한장마철"></a></figure>
+            <figure><a href="#"><img src="img/event_02.jpg" alt="원기회복삼계탕"></a></figure>
+            <figure><a href="#"><img src="img/event_03.jpg" alt="태극기게양"></a></figure>
+        </div>
+    </section>
+
+
+    <!--footer/////////////////////////  -->
+    <footer>
+        <svg class="wave">
+            <path fill="#f3fcec" fill-opacity="1"
+                d="M0 70.4192V435.001V436H960H1920V41.9519C1719 75.9129 1439.71 75.2818 1189.5 52.9393C958.698 32.3298 705.298 0 463 0C185.857 0 73.1951 42.6864 0.671511 70.1648L0 70.4192Z">
+            </path>
+        </svg>
+        <div class="row_c">
+
+            <div class="foot_logo">
+                <figure><img src="img/logo2.png" alt="epost"></figure>
+                <span>e-post</span>
+            </div>
+
+            <div class="foot_box">
+                <ul class="foot_list">
+                    <li><a href="#">인터넷우체국소개</a></li>
+                    <li><a href="#">전국우체국이용안내</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">웹접근성정책</a></li>
+                </ul>
+                <ul class="foot_text">
+                    <li>우편고객센터 :1588-1300(발신자부담) | 이메일 : help@posa.or.kr</li>
+                    <li>58323 전라남도 나주시 정보화길 1 (빛가람동) | 사업자등록번호 : 206-83-02050 (최애란)</li>
+                    <li>Copyright&copy;2016. ePOST all rights reserved.</li>
+                </ul>
+            </div>
+
+            <div class="mark_box">
+                <div>
+                    <img src="img/mark_01.gif" alt="">
+                </div>
+                <div>
+                    <img src="img/mark_02.gif" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Swiper JS -->
+    <script src="dist/js/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.sw1', {
+            slidesPerView: 1, //보여지는 슬라이드 개수
+            spaceBetween: 30, //슬라이드 사이 공간
+            loop: true,  // 반복 슬라이드
+            keyboard: {
+                enabled: true,  //키보드 제어
+            },
+            autoplay: {
+                delay: 4000, // 4초마다 슬라이드
+                disableOnInteraction: true, //버튼 제어시 멈춤
+            },
+            pagination: {
+                el: '.sw1 .swiper-pagination',
+                type: 'fraction' //페이지번호
+            },
+            navigation: { //이전다음버튼 제어
+                nextEl: '.sw1 .swiper-button-next',
+                prevEl: '.sw1 .swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>

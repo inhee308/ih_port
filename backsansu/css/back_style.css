@@ -1,0 +1,1154 @@
+@charset "utf-8";
+
+
+/* 동영상 /////////////////////// */
+#video_box{
+    position: relative;
+}
+#video_box video {
+    width: 100%;
+}
+#video_box div a{
+    display: flex;
+    align-items: center;
+    right: 20px;
+    bottom: 25px;
+    position: absolute;
+    z-index: 99;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#video_box div span:first-child{
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 300;
+}
+#video_box div span{
+    color: #fff;
+    font-size: 20px;
+}
+
+/* 천지차이나는 진짜 이유 ////////////////// */
+#sec_1 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#sec_1::before {
+    content: '';
+    position: absolute;
+    top: 33px;
+    left: 0px;
+    right: 0px;
+    bottom: 270px;
+    background: url(../img/main/water_bg.png) no-repeat;
+    opacity: 0.1;
+    z-index: -999;
+}
+
+#reason {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+#reason .reason_title {
+    padding-top: 50px;
+    text-align: right;
+}
+#reason h1 {
+    margin-right: 19px;
+}
+
+#reason h1 span {
+    font-size: 28px;
+}
+#reason .reason_title > div{
+    display: flex;
+    justify-content: end;
+}
+
+#reason div h1:nth-child(1) span:first-child{
+    font-size: 36px;
+    color: var(--blcolor);
+}
+
+#reason div h1:nth-child(2) span:first-child {
+    font-size: 36px;
+    color: var(--skycolor);
+}
+
+#reason h2 {
+    margin-right: 20px;
+    padding-bottom: 150px;
+}
+
+#reason h2 span {
+    font-size: 16px;
+}
+
+#reason h2 span:nth-child(2) {
+    color: var(--blcolor);
+}
+
+.reason_img ul {
+    display: flex;
+}
+
+.reason_img ul li{
+    width: 31.33%;
+    margin-right: 1%;
+}
+
+.reason_img figure {
+    transition: 0.4s;
+}
+
+.reason_img figure:last-child {
+    margin-right: 0;
+}
+
+.reason_img figure img {
+    display: block;
+    width: 100%;
+}
+
+ p.reason_text {
+    margin-right: 1%;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    display: none;
+}
+p.reason_text span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+ p.reason_text span.blue {
+    color: var(--blcolor);
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/*  백산수를 소개합니다/////////////////*/
+
+#sec_2 {
+    position: relative;
+    margin-bottom: 150px;
+    overflow: hidden;
+}
+
+#sec_2::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 366px;
+    background: url(../img/main/mountain.JPG) no-repeat;
+    z-index: -9999;
+}
+
+#sec_2 .sky {
+    color: var(--skycolor);
+    font-size: 36px;
+}
+
+#sec_2 .prod {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#sec_2 .prod h1 {
+    text-align: left;
+    font-size: 28px;
+    position: relative;
+}
+
+#sec_2 .prod div h1::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 23px;
+    left: -165px;
+    background: #F5F5F5;
+    border-radius: 0 10px 10px 0;
+    z-index: -999;
+}
+
+#sec_2 .prod div h1::after {
+    content: '';
+    position: absolute;
+    width: 1220px;
+    height: 2px;
+    top: 30px;
+    background: #F5F5F5;
+    margin-left: 20px;
+}
+
+#sec_2 .prod .prod_text {
+    position: absolute;
+    font-weight: 500;
+    top: 105px;
+}
+
+#sec_2 .prod .prod_text p {
+    padding: 5px;
+}
+
+#sec_2 .prod .prod_text span.blue {
+    color: var(--blcolor);
+}
+
+#sec_2 ul {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 80%;
+    padding-top: 200px;
+    margin-left: 20%;
+}
+
+#sec_2 ul::before {
+    content: '';
+    position: absolute;
+    width: 972px;
+    height: 250px;
+    top: 300px;
+    right: 0;
+    background: #E4F2FF;
+    border-radius: 10px;
+    z-index: -999;
+}
+
+#sec_2 ul li a {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+#sec_2 ul li a figure {
+    width: 100%;
+    height: 250px;
+}
+
+#sec_2 ul li a img {
+    transition: 0.3s;
+    width: 100%;
+}
+
+#sec_2 ul li a img:hover {
+    transform: translateY(-20px);
+}
+
+#sec_2 ul li a .pro_icon {
+    background: #000;
+    padding: 5px 15px;
+    background: #D2E2F0;
+    color: var(--blcolor);
+    font-size: 18px;
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+#sec_2 .ballon {
+    position: relative;
+}
+
+#sec_2 .ballon figure {
+    position: absolute;
+    left: -8%;
+    top: -100px;
+    width: 40%;
+}
+
+#sec_2 .ballon figure img {
+    width: 100%;
+}
+
+
+
+/* MORE STORY - SNS //////////////////////////////// */
+#sec_3 {
+    position: relative;
+    margin-bottom: 150px;
+    overflow: hidden;
+}
+
+#sec_3 .sns {
+    position: relative;
+}
+
+#sec_3 .sns h1 {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 28px;
+    color: #676666;
+    position: relative;
+}
+
+#sec_3 .sky {
+    color: var(--skycolor);
+}
+
+#sec_3 .sns h1 span:first-child {
+    font-size: 36px;
+}
+
+#sec_3 .sns h1::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 23px;
+    left: -165px;
+    background: #F5F5F5;
+    border-radius: 0 10px 10px 0;
+    z-index: -999;
+}
+
+#sec_3 .sns div h1::after {
+    content: '';
+    position: absolute;
+    width: 1220px;
+    height: 2px;
+    top: 30px;
+    background: #F5F5F5;
+    margin-left: 20px;
+}
+
+
+#sec_3 .sns .sns_text {
+    position: absolute;
+    font-weight: 500;
+    top: 105px;
+    left: 0;
+}
+
+#sec_3 .sns .sns_text p {
+    padding: 5px;
+}
+
+#sec_3 .sns .sns_text span.blue {
+    color: var(--blcolor);
+}
+
+/* sns 리스트 시작 /////////////////////////////////////*/
+#swiper_wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+}
+.sw1 {
+    width: 100%;
+    max-width: calc(100% - 130px);
+    margin: 0 auto;
+    padding-bottom: 80px !important;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.sns_list {
+    margin-top: 200px;
+}
+
+.sns_list ul li a {
+    position: relative;
+}
+
+.sns_list ul li a .sns_logo {
+    position: absolute;
+    width: 15%;
+    top: 5px;
+    right: 5px;
+}
+
+.sns_list ul li img {
+    width: 100%;
+    vertical-align: top;
+}
+
+
+.sns_list ul li a span {
+    display: none;
+}
+
+.sns_list ul li:nth-child(even) {
+    padding-top: 50px;
+}
+
+.sns_list ul li p {
+    font-size: 16px;
+    color: #444;
+    padding-top: 20px;
+    text-indent: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.slide_btn {
+    text-align: center;
+}
+
+.slide_btn>span {
+    display: inline-block;
+    width: 25px;
+    height: 10px;
+    border-radius: 10px;
+    background: #DAD9D9;
+    margin-top: 50px;
+    margin-right: 5px;
+}
+
+.slide_btn>span:first-child {
+    background: #676666;
+}
+.swiper-button-next, .swiper-button-prev{
+    color: #676666 !important;
+    top: 65% !important;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+    background: #444 !important;
+}
+
+
+/* 공지사항/ FAQ //////////////////////////////// */
+#sec_4 {
+    overflow: hidden;
+}
+
+.sec4_box {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.sec4_box_inner {
+    display: flex;
+    background: #F3F4F8;
+    border-radius: 10px;
+    width: 80%;
+    margin-right: 2%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.sec4_box_inner h1 {
+    font-size: 22px;
+    font-weight: 500;
+    ;
+}
+
+.notice_title,
+.faq_title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #DAD9D9;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.sec4_box_inner span {
+    padding-top: 5px;
+}
+
+.notice,
+.faq {
+    width: 50%;
+}
+
+.notice {
+    margin-right: 4%;
+}
+
+.notice ul li,
+.faq ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notice ul li div,
+.faq ul li div {
+    width: calc(100% - 100px);
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.notice ul li div a,
+.faq ul li div a {
+    display: block;
+    font-size: 16px;
+    margin-right: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* flex-grow: 1; */
+    width: 76%;
+}
+
+.notice ul li div span.new_icon,
+.faq ul li div span.new_icon {
+    background: #0064DB;
+    padding: 4px 6px 1px;
+    font-size: 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-right: 10px;
+    
+}
+
+.notice ul li span.new_date,
+.faq ul li span.new_date {
+    font-size: 15px;
+    color: #888;
+    display: block;
+    width: 80px;
+    padding-bottom: 10px;
+}
+
+.order_tel {
+    width: 20%;
+    background: #D8EAFF;
+    align-self: flex-end;
+    border-radius: 10px;
+    padding: 15px 10px 15px;
+    box-sizing: border-box;
+}
+.order_tel ul li:first-child {
+    padding-right: 35px;
+}
+
+.order_tel ul li {
+    display: flex;
+    justify-content: space-around;
+}
+
+.order_tel ul li figure {
+    width: 40px;
+}
+
+.order_tel ul li figure img {
+    width: 40px;
+   
+}
+
+.order_tel ul li span {
+    font-size: 25px;
+    color: #000;
+}
+
+.order_tel ul li a {
+    display: block;
+    font-size: 30px;
+    color: #444;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+
+/* 반응형 스타일 ////////////////////////////////////*/
+
+/* 모바일 420이하/////////////////////////////////////*/
+@media screen and (max-width: 420px) {
+    #video_box {
+        height: 300px;
+    }
+
+    #video_box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 17%;
+    }
+    #reason {
+        margin-top: -150px;
+        padding-bottom: 0;
+    }
+    #reason .reason_title > div{
+        display: block;
+        justify-content: center;
+    }
+    #reason h1 {
+        text-align: center;
+        margin-right: 0;
+    }
+    #reason h1 span{
+        font-size: 25px !important;
+    }
+    #reason h2{
+        display: none;
+    }
+    .reason_cont{
+        padding:0 10px;
+    }
+    
+    .reason_img {
+        display: block;
+        
+    }
+    .reason_img ul{
+        display: block;
+        margin-top: 50px;
+    }
+    .reason_img ul li {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    .reason_img figure{
+        width: 96%;
+        margin: 10px 2%;
+        margin-bottom: 50px;
+    }
+    .reason_img figure img{
+        box-shadow: 3px 3px 5px rgb(73, 73, 73); 
+    }
+    p.reason_text{
+        margin-top: 0;
+        align-self: center;
+        display: block;  
+    }
+    p.reason_text span{
+        display: block;
+        width: 100%;
+    }
+    #sec_2 {
+        margin-bottom: 50px;
+    }
+    #sec_2::after {
+        background: none;
+    }
+    #sec_2 .prod h1 {
+        padding-left: 20px;
+    }
+    #sec_2 .prod .prod_text{
+        padding-left: 20px;
+    }
+    #sec_2 ul {
+        display: block;
+    }
+
+    #sec_2 ul li a .pro_icon {
+        font-size: 16px;
+    }
+
+    #sec_2 ul li a figure {
+        height: 200px;
+        position: relative;
+    }
+
+    #sec_2 ul li a figure::after {
+        position: absolute;
+        content: "";
+        width: 972px;
+        height: 180px;
+        top: 123px;
+        right: 0;
+        background: #E4F2FF;
+        border-radius: 10px;
+        z-index: -9999;
+    }
+
+    #sec_2 .ballon figure {
+        top: -12px;
+        width: 115px;
+        left: 15px;
+    }
+
+    #sec_2 ul {
+        padding-top: 230px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+
+    #sec_2 ul li::before {
+        width: 100%;
+        height: 183px;
+        top: 335px;
+    }
+
+    #sec_2 ul li a {
+        padding-top: 80px;
+        display: block;
+    }
+
+    #sec_2 ul li:first-child a img {
+        width: 240px;
+    }
+
+    #sec_2 ul li a img {
+        width: 220px;
+    }
+
+    #sec_2 ul li:first-child a .pro_icon {
+        margin-top: 12px;
+    }
+
+    #sec_2 ul li a .pro_icon {
+        margin-top: 50px;
+    }
+
+    #sec_2 ul::before {
+        display: none;
+    }
+    #sec_3 {
+        margin-bottom: 50px;
+    }
+    #sec_3 .sns h1 {
+        padding-left: 20px;
+    }
+    #sec_3 .sns .sns_text{
+        padding-left: 20px;
+    }
+    #sec_3 .sns .sns_text p span{
+        display: block;
+    }
+    .sns_list ul {
+        /* flex-wrap: wrap; */
+        width: 100%;
+        
+    }
+    .sns_list ul li{
+        width: 48%;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 0;
+    }
+    .sns_list ul li:first-child{
+        margin-left: 0;
+    }
+    .sns_list ul li:first-child{
+        margin-right: 4%;
+    }
+    .sns_list ul li:nth-child(even) {
+        padding-top: 0;
+    }
+    .sns_list ul li:nth-child(3),.sns_list ul li:nth-child(4){
+        display: none;
+    }
+    .sns_list ul li a > span {
+        display: none !important;
+    }
+    #sec_3 .le_btn {
+        bottom: 0;
+        left: 30%;
+        top:initial;
+        font-size: 28px;
+    }
+    #sec_3 .ri_btn {
+        bottom: 0;
+        right: 30%;
+        top:initial;
+        font-size: 28px;
+    }
+    .sec4_box {
+        display: block;
+        margin-bottom: 22px;
+    }
+
+    .sec4_box_inner {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sec4_box_inner {
+        display: block;
+    }
+
+    .notice,
+    .faq {
+        width: 100%;
+    }
+
+    .faq {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .order_tel {
+        width: 100%;
+    }
+
+    .order_tel ul {
+        display: block;
+    }
+
+    .order_tel ul li {
+        align-items: center;
+        justify-content: center;
+    }
+    .order_tel ul li:first-child {
+        padding-right: 35px;
+    }
+    .order_tel ul li:last-child{
+        margin-top: 10px;
+    }
+
+    .order_tel ul li figure {
+        padding-top: 10px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    .order_tel ul li span {
+        padding-right: 0;
+    }
+}
+
+
+
+/* 태블릿 사이즈 ///////////////////////////////// */
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+    #video_box {
+        height: 300px;
+    }
+ 
+    #video_box div a{
+        right: 10px;
+        bottom: 15px;
+    }
+
+    #video_box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 17%;
+    }
+
+    #video_box div span{
+        font-size: 15px;
+    }
+
+    #video_box {
+        height: 300px;
+    }
+
+    #reason {
+        margin-top: -170px;
+    }
+    #sec_1::before {
+        top:58px;
+        bottom: 220px;
+    }
+    #reason .reason_title > div{
+        justify-content: center;
+    }
+
+    #reason h1 {
+        padding-bottom: 50px;
+    }
+    #reason .reason_title {
+        padding-top: 70px;
+    }
+    #reason h2 {
+        display: none;
+    }
+
+    #reason h1 span,
+    #reason h1 div:nth-child(1) span,
+    #reason h1 div:nth-child(2) span{
+        font-size: 25px;
+    }
+    .reason_img ul{
+        display: block;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .reason_img ul li {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .reason_img ul li{
+        display: flex;
+        justify-content: space-around;
+    }
+    .reason_img figure {
+        width: 50%;
+        
+    }
+    .reason_img ul li:nth-child(2) figure {
+        order: 1;
+    }    
+    
+    .reason_img figure img {
+        width: 100%;
+        margin-right: 50px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px rgb(73, 73, 73);    
+    }
+    
+    p.reason_text{
+        margin-top: 0;
+        align-self: center;
+        display: block;
+        width: 50%;     
+    }
+    p.reason_text span{
+        display: block;        
+    }
+    
+    #sec_2::after {
+        background: none;
+    }
+    #sec_2 .prod h1 {
+        padding-left: 20px;
+    }
+    #sec_2 .prod .prod_text{
+        padding-left: 20px;
+    }
+    #sec_3 .sns h1 {
+        padding-left: 20px;
+    }
+    #sec_3 .sns .sns_text{
+        padding-left: 20px;
+    }
+    #sec_3 .sns .sns_text p span{
+        display: block;
+    }
+
+    #sec_2 ul {
+        display: block;
+    }
+
+    #sec_2 ul li a .pro_icon {
+        font-size: 16px;
+    }
+
+    #sec_2 ul li a figure {
+        height: 200px;
+        position: relative;
+    }
+
+    #sec_2 ul li a figure::after {
+        position: absolute;
+        content: "";
+        width: 972px;
+        height: 180px;
+        top: 123px;
+        right: 0;
+        background: #E4F2FF;
+        border-radius: 10px;
+        z-index: -9999;
+    }
+
+    #sec_2 .ballon figure {
+        top: -12px;
+        width: 115px;
+        left: 15px;
+    }
+
+    #sec_2 ul {
+        padding-top: 230px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+
+    #sec_2 ul li::before {
+        width: 100%;
+        height: 183px;
+        top: 335px;
+    }
+
+    #sec_2 ul li a {
+        padding-top: 80px;
+        display: block;
+    }
+
+    #sec_2 ul li:first-child a img {
+        width: 240px;
+    }
+
+    #sec_2 ul li a img {
+        width: 220px;
+    }
+
+    #sec_2 ul li:first-child a .pro_icon {
+        margin-top: 12px;
+    }
+
+    #sec_2 ul li a .pro_icon {
+        margin-top: 50px;
+    }
+
+    #sec_2 ul::before {
+        display: none;
+    }
+
+    .sns_list ul {
+        /* flex-wrap: wrap; */
+        width: 100%;
+        
+    }
+    .sns_list ul li{
+        width: 48%;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 0;
+    }
+    .sns_list ul li:first-child{
+        margin-left: 0;
+    }
+    .sns_list ul li:first-child{
+        margin-right: 4%;
+    }
+    .sns_list ul li:nth-child(even) {
+        padding-top: 0;
+    }
+    .sns_list ul li a > span {
+        display: none !important;
+    }
+    #sec_3 .le_btn {
+        bottom: 0;
+        left: 30%;
+        top:initial;
+        font-size: 28px;
+    }
+    #sec_3 .ri_btn {
+        bottom: 0;
+        right: 30%;
+        top:initial;
+        font-size: 28px;
+    }
+    .sec4_box {
+        display: block;
+    }
+
+    .sec4_box_inner {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sec4_box_inner {
+        display: block;
+    }
+
+    .notice,
+    .faq {
+        width: 100%;
+    }
+
+    .faq {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .order_tel {
+        width: 100%;
+    }
+
+    .order_tel ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order_tel ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    .order_tel ul li figure {
+        padding-top: 10px;
+        width: 40px;
+        margin-right: 10px;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    .order_tel {
+        width: 18%;
+    }
+    .order_tel ul li span {
+        display: block;
+        padding-right: 0;
+        font-size: 23px;
+    }
+    .order_tel ul li a {
+        text-align: center;
+    }
+}
+
+/* 769 이상에서 작동 */
+@media  screen and (min-width: 769px){
+   
+    #reason h1 div:nth-child(1) span:nth-child(2){
+        padding-right: 15px;
+    }
+    #reason .reason_img ul li.active figure{
+        transform: scale(1.2);
+        transition: 0.5s;
+        box-shadow: 5px 5px 5px rgb(73, 73, 73);
+    }
+    #reason .reason_img ul li.active p.reason_text{
+        display: block;
+    }
+    .shadow {
+        position: absolute;
+        width: 85%;
+        left: 0;
+        bottom: 60px;
+        height: 30px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        filter: blur(15px);
+        margin-top: -13px;
+        margin-left: 8%;
+        z-index: -998;
+    }
+    .sns_bg {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: calc(100% - 42px);
+        z-index: 1;
+        transition: 0.5s;    
+    }
+    .sns_show {
+        position: absolute;
+        background: #459BBF;
+        border-radius: 10px;
+        width: 90px;
+        height: 25px;
+        top: 40%;
+        left: 50%;
+        transform: translatex(-50%);
+        padding: 3px 10px 3px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        z-index: 2;
+        transition: 0.5s;
+    }
+}
+

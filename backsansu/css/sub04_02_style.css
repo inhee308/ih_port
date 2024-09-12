@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* 해당 메뉴 활성화 */
+#sub_menu dl dd:nth-child(3) a {
+    display: block;
+    background: #E4F2FF;
+    color: #000;
+    font-weight: 400;
+}
+
+#sns .sns_wrap > p {
+    text-align: right;
+    margin-bottom: 50px;
+}
+#sns h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #333;
+}
+#sns h3{
+    text-align: center;
+    color: #91a6b1;
+    margin-bottom: 85px;
+}
+
+
+/* common 가로사이즈 수정 */
+#sub_menu dl dt,
+#sub_menu dl dd {
+    width: 25%;
+}
+
+.grid-sizer, .grid-item{
+    width: 20%;
+}
+.grid-item > div{
+    background: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.grid-item > div img{
+    width: 100%;
+}
+.grid-item-width2{
+    width:40%;
+}
+.grid-item img{
+    transition: 0.3s;
+}
+.grid-item:hover img{
+    filter: brightness(0.8);
+}
+.grid-item p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    color: #444;
+    text-align: center;
+    padding: 8px 5px;
+}
+.grid-item:hover p{
+    color: #000;
+    background: #E4F2FF;
+}
+
+.grid{
+    margin: 20px auto;
+}
+
+@media screen and (max-width:768px) {
+    .grid-item, .grid-sizer{
+        width: 33.333%;
+    }            
+}
+@media screen and (max-width:480px) {
+    .grid-item, .grid-sizer{
+        width: 50%;
+    }            
+}
+
+
+@media screen and (max-width:620px){
+    #sub_menu dl dt{
+        width: 100%;
+    }
+    #sub_menu dl dd{
+        width: 33.333%;       
+    }
+    #sub_menu{
+        padding-top: 70px;
+    }
+}
+
+@media screen and (max-width:860px) {
+    
+}
+@media screen and (max-width:420px) {
+   
+}

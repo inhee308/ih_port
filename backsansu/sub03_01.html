@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백산수 sub03_01</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/navi.js"></script>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/main/back_favicon.png">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub03_01_style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <script>
+        //JQuery 시작
+        $(function () {
+
+            //기사 자세히 보기 
+            var birthNews = $('#happy_label .happy_label_wrap .quantity_list .birth_news li');
+
+
+            birthNews.mouseenter(function () {
+
+                birthNews.find('span').removeClass('birth_show').hide();
+                $(this).find('span').addClass('birth_show').show();
+
+            });
+            birthNews.mouseleave(function () {
+
+                birthNews.find('span').removeClass('birth_show').hide();
+                $(this).find('span').removeClass('birth_show')
+
+
+            });
+
+
+            $('.birth_news li').click(function () {
+                var imgSrc = $(this).find('img').attr('src');
+                var imgAlt = $(this).find('img').attr('alt');
+                $('#popup-img').attr('src', imgSrc);
+                $('#popup-img').attr('alt', imgAlt);
+                $('#popup').fadeIn();
+                
+                //모달 배경에 스크롤 없애기
+                $('body').css('overflow', 'hidden');
+            });
+
+
+            // 닫기 버튼 클릭 시 팝업 닫기
+            $('.close').click(function () {
+                $('#popup').fadeOut();
+                $('body').css('overflow','auto');   
+            });
+            $('.popup').click(function () {
+                $('#popup').fadeOut();
+                $('body').css('overflow','auto');   
+            });
+
+
+
+
+        }); //JQuery 종료
+    </script>
+</head>
+
+<body>
+
+    <!-- header 불러오기 -->
+    <? include "header.html" ?>
+
+    <div id="sub_menu" class="row_c">
+        <dl>
+            <dt><a href="#">라이프스타일</a></dt>
+            <dd><a href="sub03_01.html">태생부터천지차이</a></dd>
+            <dd><a href="sub03_01.html">커피와함께백산수</a></dd>
+            <dd><a href="sub03_01.html">백산수사용카페</a></dd>
+        </dl>
+    </div>
+
+
+    <div id="happy_label">
+        <div class="row_c">
+            <div class="happy_label_wrap">
+                <p>
+                    <span><img src="img/sub02_04/home.png" alt="홈"></span>
+                    <span> &nbsp;&nbsp;> &nbsp;라이프스타일 > 태생부터천지차이</span>
+                </p>
+                <h2>태생부터 천지차이</h2>
+                <h3>우리아이 첫번째 물 , 천지차이 백산수</h3>
+                <div class="quantity_list">
+                    <div class="happy_01">
+                        <div class="bir_news_title">
+                            <span> 앙쥬</span><span> 수록기사</span>
+                        </div>
+
+                        <ul class="birth_news">
+                            <li>
+                                <div><!-- 어두운배경 --></div>
+                                <span class='birth_show'>자세히 보기 > </span>
+                                <figure><img src="img/sub03_01/bir_news_01.jpg" alt="아기분유물로좋은백산수"></figure>
+                                <p>앙쥬 2021년 8월호</p>
+                            </li>
+                            <li>
+                                <div><!-- 어두운배경 --></div>
+                                <span>자세히 보기 ></span>
+                                <figure><img src="img/sub03_01/bir_news_02.jpg" alt="우리아이가마시는첫번째물"></figure>
+                                <p>앙쥬 2021년 8월호</p>
+                            </li>
+                            <li>
+                                <div><!-- 어두운배경 --></div>
+                                <span>자세히 보기 > </span>
+                                <figure><img src="img/sub03_01/bir_news_03.jpg" alt="아기에게유익한물"></figure>
+                                <p>앙쥬 2021년 8월호</p>
+                            </li>
+                            <li>
+                                <div><!-- 어두운배경 --></div>
+                                <span>자세히 보기 > </span>
+                                <figure><img src="img/sub03_01/bir_news_04.jpg" alt="건강을책임지는깨끗한물"></figure>
+                                <p>앙쥬 2021년 8월호</p>
+                            </li>
+                        </ul>
+                        <div id="popup" class="popup">
+                            <figure>
+                                <img id="popup-img" src="#" alt="">
+                                <span class="material-symbols-outlined close">
+                                    close
+                                </span>
+                            </figure>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div><!-- happy_label_wrap -->
+        </div><!--row_c  -->
+    </div><!--happy_label  -->
+
+
+    <!-- footer 불러오기 -->
+    <? include "footer.html" ?>
+
+</body>
+
+</html>

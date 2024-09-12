@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+/* 해당 메뉴 활성화 */
+#sub_menu dl dd:nth-child(2) a {
+    display: block;
+    background: #E4F2FF;
+    color: #000;
+    font-weight: 400;
+}
+
+/* common 가로사이즈 수정 */
+#sub_menu dl dt,
+#sub_menu dl dd {
+    width: 33.333%;
+}
+
+
+/* 공지사항 시작//////////////////////// */
+
+#notice .notice_wrap > p {
+    text-align: right;
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+#notice h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 50px;
+}
+#notice h3{
+    text-align: center;
+    color: #91a6b1;
+    margin-bottom: 30px;
+}
+
+/* 검색스타일//////////// */
+#search{
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;    
+    display: flex;
+    justify-content: space-between;
+}
+#search .notice_title{
+    height: 30px;
+    line-height: 30px;
+}
+#search form{
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 6px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+#sh{
+    height: 18px;
+    margin-top: 3px;
+    border: 0;
+    width: 80px;
+    text-indent: 10px;
+    outline: none;
+    
+}
+#sh_box{  
+    height: 18px;
+    margin-top: 3px;
+    border: 0;
+    border-left: 1px solid #bbb;
+    text-indent: 10px;
+    width: 250px;
+    outline: none;
+}
+#sh_btn{
+     width: 20px;
+     margin-right: 10px;
+}
+
+/* 테이블스타일 */
+
+#notice_tb{
+    width: 100%;
+    
+    text-align: center;
+    margin-bottom: 50px;
+}
+#notice_tb thead{
+    background: #f3f4f8;
+}
+#notice_tb th {
+    padding : 12px;
+    font-size: 16px;    
+    color: #000;
+    font-weight: 500;    
+}
+#notice_tb td{
+    padding: 10px;
+    border-bottom: 1px solid #f3f4f8;
+    font-size: 15px;    
+}
+#notice_tb tr:not(:first-child):hover {
+    background: #f3f4f8;
+}
+#pagination{
+    width: 100%;    
+    text-align: center;
+    margin-bottom: 50px;
+}
+.page-link{
+    padding: 10px;
+    cursor: pointer;
+    color: #346094;
+
+}
+
+
+/* 반응형 스타일 /////////////////////////// */
+
+@media screen and (max-width:620px){
+    #sub_menu dl dt{
+        width: 100%;
+    }
+    #sub_menu dl dd{
+        width: 50%;       
+    }
+    #happy_label{
+        padding-top: 0 !important;
+    }
+  
+    #sub_menu{
+        padding-top: 70px;
+    }
+  
+}
+@media screen and (max-width:380px){
+    #sh_box{
+        width: 180px;
+    }
+}
+

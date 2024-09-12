@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Inhee Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta property="og:url" content="http://ihwork.dothome.co.kr">
+  <meta property="og:title" content="박인희의 포트폴리오">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/ih_pofol_intro.png">
+  <meta property="og:description" content="UI/UX 반응형 웹페이지 제작">
+
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" href="images/my_favicon.png">
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <!-- <script src="dist/circle-progress.js"></script> -->
+  <script>
+
+    $(function () {
+
+      $(document).ready(function () {
+        AOS.init();
+        const $counters = $(".scroll_on");
+
+
+        const exposurePercentage = 100;
+        const loop = true; // 애니메이션 반복 여부
+
+        $(window).on('scroll', function () {
+          $counters.each(function () {
+            const $el = $(this);
+
+            const rect = $el[0].getBoundingClientRect();
+            const winHeight = window.innerHeight;
+            const contentHeight = rect.bottom - rect.top;
+
+            // 요소가 화면에 특정 비율만큼 노출될 때 처리
+            if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+              $el.addClass('active');
+            }
+            // 요소가 화면에서 완전히 사라졌을 때 처리
+            if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+              $el.removeClass('active');
+            }
+          });
+        }).scroll();
+      });
+
+
+      /* skill tab//////////////////// */
+
+      $('.tab_tit ul li').eq(0).addClass('on');
+      $('.tab_body > div').eq(0).show();
+      $('.tab_body > div').not(':eq(0)').hide();
+
+      $('.tab_tit ul li').click(function () {
+
+
+        var i = $(this).index();
+        $('.tab_tit ul li').removeClass('on');
+        $(this).addClass('on');
+
+        $('.tab_body > div').hide();
+        $('.tab_body > div').eq(i).show();
+
+        return false;
+      });
+
+
+    });//JQuery 종료
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="h2 mb-0">InHee<span class="text-primary">.</span>
+              </a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#about-section" class="nav-link">About Me</a></li>
+                <li><a href="#resume-section" class="nav-link">Resume</a></li>
+                <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact Me</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#"
+              class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade"
+      id="home-section">
+      <div class="overlay_gra"></div>
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-8 mt-lg-5 text-center">
+            <h1 data-aos="fade-up">Welcome To<br>Inhee's Portfolio</h1>
+            <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">WEB PUBLISHER</p>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <a href="#contact-section" class="btn smoothscroll btn-primary mr-2 mb-2">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section cta-big-image" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center" data-aos="fade">
+            <h2 class="section-title mb-3">About Me</h2>
+          </div>
+        </div>
+        <div class="row intro">
+          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+            <figure class="circle-bg">
+              <img src="images/ih_prof.png" alt="Image" class="img-fluid">
+            </figure>
+          </div>
+          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-4">
+              <h3 class="h3 mb-4 text-black">PARK IN HEE</h3>
+              <p>새로운 도전과 학습을 통해 끊임없는 성장과 발전을 추구하는
+                웹퍼블리셔 박인희입니다.</p>
+            </div>
+            <div class="mb-4">
+              <ul class="list-unstyled ul-check success">
+                <li>1984. 06. 28</li>
+                <li>010 - 9493 - 3873</li>
+                <li>inhee308@gmail.com</li>
+                <li>한신대학교 정보통신학과 졸업</li>
+                <li>#긍정적#성실#노력#적응력#자기계발</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section cta-big-image" id="skill-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center scroll_on type_bottom">
+            <h2 class="section-title mb-3">Skill</h2>
+            <div id="tab_container">
+              <div class="tab_tit row_c">
+                <ul>
+                  <li>html</li>
+                  <li>css</li>
+                  <li>javascript</li>
+                  <li>mediaquery</li>
+                  <li>photoshop</li>
+                  <li>figma</li>
+                  <li>SQL</li>
+                </ul>
+              </div>
+              <div class="border2">
+                <div class="tab_body row_c">
+
+                  <div class="html">
+                    <figure><img src="images/html.png" alt="html"></figure>
+                    <p>HTML, HTML5의 기본 구조를 이해하며 타이틀, 하이퍼링크, 플러그인, 태그 등이 가능합니다.
+                      또한, 웹표준 및 웹접근성을 항상 고려하여 마크업을 작성합니다. </p>
+                  </div>
+                  <div class="css">
+                    <figure><img src="images/css.png" alt="css"></figure>
+                    <p>CSS3의 기본 구조와 속성을 이해하며 외부 스타일 시트를 이용해 다양한 구조와 스타일, 코드 구현이 가능합니다.</p>
+                  </div>
+                  <div class="javascript">
+                    <figure><img src="images/js.png" alt="css"></figure>
+                    <p>JavaScript와 jQuery의 기본 구조를 이해하며 활용할 수 있습니다.<br>
+                      선택자, 오픈소스 활용이 가능합니다. </p>
+                  </div>
+                  <div class="media">
+                    <figure><img src="images/css.png" alt="css"></figure>
+                    <p>Media Query를 통한 반응형 웹페이지 제작 가능합니다.
+                      max-width, min-width, grid-template-areas를 통해 pc, 아이패드, 모바일 등 제작이 가능합니다.</p>
+                  </div>
+                  <div class="photoshop">
+                    <figure><img src="images/photoshop.png" alt="photoshop"></figure>
+                    <p>포토샵을 이용해 시안을 제작할 수 있고 사진 편집 및 누끼따기 등 활용이 가능합니다.</p>
+                  </div>
+                  <div class="figma">
+                    <figure><img src="images/figma.png" alt="피그마"></figure>
+                    <p>기본적인 퍼블리싱 작업을 위해 피그마 활용 경험이 있습니다.</p>
+                  </div>
+                  <div class="SQL">
+                    <figure><img src="images/sql.png" alt="SQL"></figure>
+                    <p>sql을 사용하여 데이터 검색, 삽입,수정,삭제 등의 기본적인 작업을 수행한 경험이 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section cta-big-image" id="resume-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center aos-init aos-animate" data-aos="fade-up">
+            <h2 class="section-title mb-3">My Resume</h2>
+          </div>
+        </div>
+        <div class="row">
+          <!-- ======= My Resume Section ======= -->
+          <section id="resume" class="resume col-12">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                  <h3 class="resume-title">Education</h3>
+                  <div class="resume-item">
+                    <h4>안산 성안고등학교 졸업</h4>
+                    <h5>2000-03 ~ 2003-02</h5>
+                  </div>
+                  <div class="resume-item">
+                    <h4>한신대학교 정보통신학과 졸업</h4>
+                    <h5>2003-03 ~ 2007-02</h5>
+                  </div>
+                  <div class="resume-item">
+                    <h4>안양이젠컴퓨터학원</h4>
+                    <h4>UI/UX 웹퍼블리셔&반응형웹디자인 수료</h4>
+                    <h5>2024-03 ~ 2024-08</h5>
+                  </div>
+                  <h3 class="resume-title License">License</h3>
+                  <div class="resume-item">
+                    <h4>정보처리기사</h4>
+                    <ul>
+                      <li>취득일 : 2006-12-18</li>
+                      <li>자격증번호 : 06204101415C</li>
+                    </ul>
+                  </div>
+                  <div class="resume-item">
+                    <h4>웹디자인기능사</h4>
+                    <ul>
+                      <li>취득일 : 2022-09-08</li>
+                      <li>자격증번호 : 22403102079D</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                  <h3 class="resume-title">Sumary</h3>
+                  <div class="resume-item">
+                    <h4>중소벤처기업진흥공단 중소기업연수원</h4>
+                    <h5>2007-03-01 ~ 2008-09-30</h5>
+                    <ul>
+                      <li>유지운영</li>
+                      <li>환경 및 TOOL : jsp, eclipse</li>
+                    </ul>
+                  </div>
+                  <div class="resume-item">
+                    <h4>제이앤비인터내셔날</h4>
+                    <h5>2009-05-01 ~ 2010-12-31</h5>
+                    <ul>
+                      <li>쇼핑몰 유지운영</li>
+                      <li>환경 및 TOOL : photoshop</li>
+                    </ul>
+                  </div>
+                  <div class="resume-item">
+                    <h4>중소벤처기업진흥공단 중소기업연수원</h4>
+                    <h5>2011-01-01 ~ 2011-12-31</h5>
+                    <ul>
+                      <li>이러닝콘텐츠관리 및 유지운영</li>
+                      <li>환경 및 TOOL : jsp, photoshop, oracle</li>
+                    </ul>
+                  </div>
+                  <div class="resume-item">
+                    <h4>중소벤처기업진흥공단 중소기업연수원</h4>
+                    <h5>2022-08.30 ~ 2023-02-28</h5>
+                    <ul>
+                      <li>콘텐츠관리 및 퍼블리싱</li>
+                      <li>환경 및 TOOL : html, css, vscode, oracle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      </section><!-- End My Resume Section -->
+    </div>
+
+
+
+    <section class="site-section" id="portfolio-section">
+      <div class="site-section">
+        <div class="container">          
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-7 text-center aos-init aos-animate" data-aos="fade-up">
+              <h2 class="section-title mb-3">Portfolio</h2>
+              <!-- <p class="lead">
+                반응형 웹페이지 제작</p> -->
+            </div>
+          </div>
+          <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="" >
+            <div class="col-lg-6 mb-5">
+              <div class="owl-carousel slide-one-item-alt">
+                <img src="images/port/bif_main.png" alt="보루네오" class="img-fluid">
+                <img src="images/port/epost_main.png" alt="우체국" class="img-fluid">
+                <img src="images/port/flore_main.png" alt="플로레비다" class="img-fluid">
+                <img src="images/port/back_main.png" alt="백산수" class="img-fluid">
+                <img src="images/port/morning_main.png" alt="모닝글로리" class="img-fluid">
+              </div>
+              <div class="custom-direction">
+                <a href="#" class="custom-prev"><span><span class="icon-keyboard_backspace"></span></span></a><a
+                  href="#" class="custom-next"><span><span class="icon-keyboard_backspace"></span></span></a>
+              </div>
+            </div>
+            <div class="col-lg-5 ml-auto">
+              <div class="owl-carousel slide-one-item-alt">
+                <div>
+                  <h2 class="section-title mb-3 fz32">BIF 보루네오</h2>
+                  <!-- <p class="lead">Main-Page - pc/mobile 반응형 구현</p> -->
+                  <p class="lead_1 first">레이아웃 수정과<br> 기업의 경영 신념을 강조한<br> 회사소개로 리뉴얼하였습니다</p>
+                  <p class="lead_1 ">Type : 반응형</p>    
+                  <p class="lead_1">Page : Main</p>    
+                  <p class="lead_1">제작일 : + 3</p> 
+                  <p class="lead_1 bif">Color : <span>Color</span><span>Color</span><span>Color</span></p> 
+                  <div class="website_view">
+                    <p><a href="images/port/bif_prev.JPG" target="_blank" class="btn btn-primary2 mr-2 mb-2">기존 site</a></p>                          
+                    <p><a href="bif/bif_main.html" target="_blank" class="btn btn-primary2-ho mr-2 mb-2">리뉴얼 site</a></p>
+                  </div>
+                  
+                </div>
+                <div>
+                  <h2 class="section-title mb-3 fz32">인터넷 우체국</h2>
+                  <!-- <p class="lead">Main-Page - pc/mobile 반응형 구현</p> -->
+                  <p class="lead_1 first">다소 오래된 레이아웃을 변화시켜<br> 사용자들이 보다 쉽고 편리하게<br> 이용할 수 있도록 했습니다</p>       
+                  <p class="lead_1 ">Type : 반응형</p>    
+                  <p class="lead_1 ">Page : Main</p>    
+                  <p class="lead_1 ">제작일 : + 3</p>    
+                  <p class="lead_1 post">Color : <span>Color</span><span>Color</span><span>Color</span></p>    
+                  <div class="website_view">
+                    <p><a href="images/port/epost_prev.JPG" target="_blank" class="btn btn-primary2 mr-2 mb-2">기존 site</a></p>                          
+                    <p><a href="epost/epost_main.html" target="_blank" class="btn btn-primary2-ho mr-2 mb-2">리뉴얼 site</a></p>
+                  </div>
+                </div>
+                <div>
+                  <h2 class="section-title mb-3 fz32">Florevida</h2>
+                  <!-- <p class="lead">Main-Page - pc/mobile 반응형 구현</p> -->
+                  <p class="lead_1 first">네이버페이를 통해<br> 상품을 등록하고 판매하는 전용 플랫폼을<br> 새롭게 디자인했습니다</p> 
+                  <p class="lead_1 ">Type : 반응형</p>      
+                  <p class="lead_1 ">Page : Main</p>    
+                  <p class="lead_1 ">제작일 : + 3</p> 
+                  <p class="lead_1 flore">Color : <span>Color</span><span>Color</span><span>Color</span></p>    
+                  <div class="website_view">
+                    <!-- <p><a href="images/port/epost_prev.JPG" target="_blank" class="btn btn-primary2 mr-2 mb-2">기존 site</a></p>                           -->
+                    <p><a href="flore/flore_main.html" target="_blank" class="btn btn-primary2-ho mr-2 mb-2">site view</a></p>
+                  </div>
+                </div>
+                <div>
+                  <h2 class="section-title mb-3 fz32">농심 백산수</h2>
+                  <!-- <p class="lead">Main-Page - pc/mobile 반응형 구현<br>Sub-Page - pc/mobile 반응형 구현</p> -->
+                  <p class="lead_1 first">정보 접근성과<br> 사용자 편의성을 높여<br> 리뉴얼하였습니다</p> 
+                  <p class="lead_1 ">Type : 반응형</p>      
+                  <p class="lead_1 ">Page : Main + sub 10p + login</p>    
+                  <p class="lead_1 ">제작일 : + 10</p> 
+                  <p class="lead_1 back">Color : <span>Color</span><span>Color</span><span>Color</span></p>     
+                  <div class="website_view">
+                    <p><a href="images/port/back_prev.JPG" target="_blank" class="btn btn-primary2 mr-2 mb-2">기존 site</a></p>                          
+                    <p><a href="backsansu/main.html" target="_blank" class="btn btn-primary2-ho mr-2 mb-2">리뉴얼 site</a></p>
+                  </div>
+                </div>
+                <div>
+                  <h2 class="section-title mb-3 fz32">모닝글로리</h2>
+                  <!-- <p class="lead">Main-Page - pc/mobile 반응형 구현<br>Sub-Page - pc/mobile 반응형 구현</p> -->
+                  <p class="lead_1 first">사용자 편의성을 높이고<br>기존의 오래된 레이아웃에서<br>친근한 느낌으로 리뉴얼하였습니다</p> 
+                  <p class="lead_1 ">Type : 반응형</p>      
+                  <p class="lead_1 ">Page : Main</p>    
+                  <p class="lead_1 ">제작일 : + 3</p> 
+                  <p class="lead_1 morning">Color : <span>Color</span><span>Color</span><span>Color</span></p>     
+                  <div class="website_view">
+                    <p><a href="images/port/morning_prev.JPG" target="_blank" class="btn btn-primary2 mr-2 mb-2">기존 site</a></p>                          
+                    <p><a href="morning/morning_main.html" target="_blank" class="btn btn-primary2-ho mr-2 mb-2">리뉴얼 site</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="container">
+
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3"></h2>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-5">
+          <div id="filters" class="filters text-center button-group col-md-7">
+            <button class="btn btn-primary active" data-filter="*">All</button>
+            <button class="btn btn-primary" data-filter=".web">Web</button>
+            <button class="btn btn-primary" data-filter=".design">Design</button>
+          </div>
+        </div>
+        <div id="posts" class="row no-gutter">
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/bif_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/bif_main.png">
+            </a>
+            <p class="center">보루네오_Main 반응형</p> 
+            <a class="alink" href="bif/bif_main.html" target="_blank"><span class="icon-link"></span></a>
+            
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/epost_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/epost_main.png">
+            </a>
+            <a class="alink" href="epost/epost_main.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">우체국_Main 반응형</p> 
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/flore_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/flore_main.png">
+            </a>
+            <a class="alink" href="flore/flore_main.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">Florevida_Main 반응형</p> 
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/back_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/back_main.png">
+            </a>
+            <a class="alink" href="backsansu/main.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">백산수_Main + Sub 반응형</p> 
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/morning_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/morning_main.png">
+            </a>
+            <a class="alink" href="morning/morning_main.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">모닝글로리_Main 반응형</p> 
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/kakao_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/kakao_main.jpg">
+            </a>
+            <a class="alink" href="kakao/kakao_index.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">카카오뱅크_Main</p> 
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/lahan_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/lahan_main.jpg">
+            </a>
+            <a class="alink" href="lahan/index.html" target="_blank"><span class="icon-link"></span></a>
+            <p class="center">라한호텔_Main</p> 
+          </div>
+          <div class="item design col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/img_2.gif" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/elimental4.png">
+            </a>
+            <p class="center">엘리멘탈 애니메이션 디자인</p> 
+          </div>
+          <div class="item design col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/port/coffe_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/port/coffe_main.png">
+            </a>
+            <p class="center">폴바셋 Pc/Mobile 디자인</p> 
+          </div>
+
+
+
+
+          <!-- <div class="item design col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/img_8.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/img_8.jpg">
+            </a>
+          </div>
+          <div class="item web col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/img_13.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/img_13.jpg">
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+
+    <section class="site-section bg-light" id="contact-section">
+      <div class="container scroll_on type_bottom">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Contact Me</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-4 text-center">
+            <p class="mb-4">
+              <span class="icon-room d-block h4 text-primary"></span>
+              <span>경기도 안산시 상록구 건건8길 10</span>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <p class="mb-4">
+              <span class="icon-phone d-block h4 text-primary"></span>
+              <span>010 - 9493 - 3873</span>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <p class="mb-0">
+              <span class="icon-mail_outline d-block h4 text-primary"></span>
+              <span>inhee308@gmail.com</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="footer-heading mb-4">About Me</h2>
+                <p>노력을 게을리 하지 않고 꾸준히 성장해 나가는<br> 웹퍼블리셔 박인희 입니다.</p>
+              </div>
+              <div class="col-md-3 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#about-section" class="smoothscroll">About Me</a></li>
+                  <li><a href="#Portfolio-section" class="smoothscroll">Portfolio</a></li>
+                  <li><a href="#resume" class="smoothscroll">Resume</a></li>
+                  <li><a href="#contact-section" class="smoothscroll">Contact Me</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p>
+                본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
+                Copyright &copy; Park Inhee. All Rights Reserved&nbsp;&nbsp;<i class="icon-heart text-danger"
+                  aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

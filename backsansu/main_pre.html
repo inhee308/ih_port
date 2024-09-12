@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백산수 main</title>
+    <!-- 자바스크립트 라이브러리인 jQuery 불러오기 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/back_style.css">
+    <script>
+
+        $(function () {
+
+            $('.main_navi').mouseover(function () {
+                $('.sub_container').slideToggle(300);
+                $('.bg').slideToggle(300);
+            });
+
+            $('.reason_img figure').mouseover(function(){            
+                $(this).find().addClass('on');
+            }).mouseout(function(){
+                $(this).find().removeClass('on');
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- header //////////////////////////////////////-->
+    <header>
+        <div class="logo ">
+            <a href="#">
+                <img src="img/main/logo.png" alt="천지차이백산수">
+            </a>
+        </div>
+        <nav>
+            <div class="main_navi">
+                <ul>
+                    <li>
+                        <a href="#">브랜드스토리</a>
+                    </li>
+                    <li>
+                        <a href="#">제품</a>
+                    </li>
+                    <li>
+                        <a href="#">라이프스타일</a>
+                    </li>
+                    <li>
+                        <a href="#">홍보</a>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                    </li>
+                </ul><!-- main_navi -->
+            </div>
+            <div class="sub_container">
+                <div class="sub_navi">
+                    <ul>
+                        <li><a href="#">천지차이백산수</a></li>
+                        <li><a href="#">건강한백산수</a></li>
+                        <li><a href="#">안전한백산수</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">백산수용량</a></li>
+                        <li><a href="#">백산수무라벨</a></li>
+                        <li><a href="#">소아환아희망라멜</a></li>
+                        <li><a href="#">제품주문</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">태생부터천지차이</a></li>
+                        <li><a href="#">커피와함께백산수</a></li>
+                        <li><a href="#">백산수사용카페</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">TV - CF</a></li>
+                        <li><a href="#">SNS</a></li>
+                        <li><a href="#">해피해피캠페인</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주하는질문</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="bg"></div>
+    </header>
+
+
+    <!-- 동영상 /////////////////////////////-->
+    <div id="video_box">
+        <video muted autoplay loop>
+            <source src="img/main/main_v.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+    <!-- 천지차이나는 이유 ///////////////////////////-->
+    <div id="reason" class="row_c">
+        <hgroup>
+            <h1>
+                <span>백산수</span>
+                <span>가</span>
+                <span>천지차이</span>
+                <span>나는 진짜 이유!</span>
+            </h1>
+            <h2>
+                <span>백산수는</span>
+                <span>자연과 시간이 빚어낸 물</span>
+                <span>이에요</span>
+            </h2>
+        </hgroup>
+        <div class="reason_img">
+            <figure>
+                <img src="img/main/reason_1.jpg" alt="맑음의차이">
+                <p>백두산 화산 암반층이 오랜 세월 거르고 거른 물</p>                
+            </figure>
+            <figure>
+                <img src="img/main/reason_2.jpg" alt="맑음의차이">
+                <p>태곳적부터 지켜온 백두산 청정원시림 보호구역</p>
+            </figure>
+            <figure>
+                <img src="img/main/reason_3.jpg" alt="맑음의차이">
+                <p>자연의 힘으로 스스로 솟아나는 용천수</p>
+            </figure>
+        </div>
+    </div>
+
+</body>
+
+</html>

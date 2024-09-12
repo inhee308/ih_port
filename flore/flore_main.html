@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florevida</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/flore_style.css">
+    <!-- 폰트어썸  -->
+    <script src="https://kit.fontawesome.com/0db729398c.js" crossorigin="anonymous"></script>
+
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const $counters = $(".scroll_on");
+
+
+            const exposurePercentage = 100;
+            const loop = true; // 애니메이션 반복 여부
+
+            $(window).on('scroll', function () {
+                $counters.each(function () {
+                    const $el = $(this);
+
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+
+                    // 요소가 화면에 특정 비율만큼 노출될 때 처리
+                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                        $el.addClass('active');
+                    }
+                    // 요소가 화면에서 완전히 사라졌을 때 처리
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        $el.removeClass('active');
+                    }
+                });
+            }).scroll();
+        });
+
+
+
+
+        $(function () {
+            $(".menu_bar").on("click", function () {
+                $("#menu").toggleClass("active");
+                $(".menu_bar span").toggleClass("active");
+                $(".bg_black").toggleClass("active");
+
+
+                $('#menu>ul>li').mouseenter(function () {
+                    $('#menu>ul>li').children('.submenu').removeClass('on');
+                    $(this).children('.submenu').addClass('on');
+                });
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu_bar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bg_black"></div>
+        <div id="menu">
+            <ul>
+                <li class="about"><a href="#">About</a><span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Brand Story</a>
+                        </li>
+                        <li>
+                            <a href="#">Awards</a>
+                        </li>
+                        <li>
+                            <a href="#">Florevida FOR REST</a>
+                        </li>
+                    </ul>
+                    </a>
+                </li>
+                <li class="products">
+                    <a href="#">products</a><span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Best</i></a>
+                        </li>
+                        <li>
+                            <a href="#">퍼스널케어</i></a>
+                        </li>
+                        <li>
+                            <a href="#">기프트세트</a>
+
+                        </li>
+                        <li>
+                            <a href="#">프래그런스</a>
+                        </li>
+                        <li>
+                            <a href="#">샘플키트</a>
+                        </li>
+                    </ul>
+                    </a>
+                </li>
+                <li class="flore Moments"><a href="#">Flore Moments</a></li>
+                <li class="stores"><a href="#">Stores</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="sec01">
+        <div class="sec01_text">
+            <figure class="scroll_on type_left"><img src="img/logo.png" alt="플로레비다"></figure>
+            <p class="scroll_on type_left">
+                당신의 일상 속 감각을 깨워줄<br>
+                florevida
+            </p>
+        </div>
+        <div class="sec01_img"></div>
+    </section>
+
+    <section id="sec02">
+        <figure><img src="img/main_05.jpg" alt="배경"></figure>
+        <div class="sec02_text scroll_on type_left">
+            <h2>Inspire your every moment</h2>
+            <p><span>플로레비다는 이 땅에서 태어난 식물의</span><span>강인한 생명력과 </span></p>
+            <p><span>자연 그대로의 향기를 모아</span><span>일상의 감성을 더욱 풍요롭게 하고 </span></p>
+                <p>영감을 선사하는 비건 퍼스널 케어 브랜드 입니다</p>           
+            <div><button><a href="#">Brand Story</a></button></div>
+        </div>
+    </section>
+
+
+    <section id="sec03">
+        <div class="sec03_box">
+            <div class="sec01_ani">
+                <div class="ani-wrap">Florevida</div>
+                <div class="ani-wrap">Florevida</div>
+                <div class="ani-wrap">Florevida</div>
+                <div class="ani-wrap">Florevida</div>
+            </div>
+            <div class="sec03_cont row_c">
+                <div class="scroll_on type_bottom">
+                    <div class="sec03_img">
+                        <p><img src="img/sec04_font.png" alt="소중한가족을위해"></p>
+                        <p><img src="img/sec04_font_bg.png" alt="나뭇잎"></p>
+                    </div>
+                    <p class="sec03_txt">
+                        <span>좋은 제품이라도 사람마다</span><span>효과와 보습력의 차이가 있습니다.</span>
+                        <span>플로레비다는</span><span> 소중한 가족이 안심하게 바를 수 있는</span>
+                        <span>순한 제품을 만들고 싶은 마음으로부터</span><span>시작되었습니다</span>
+                    </p>
+                </div>
+                <figure><img src="img/main_02.jpg" alt="장미"></figure>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Swiper -->
+    <div class="swiper sw1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide_box">
+                <figure class="scroll_on type_bottom"><img src="img/slide_01.jpg" alt="main1"></figure>
+                <div class="txts">
+                    <h2>SOUP</h2>
+                    <strong>더로즈가드너 바디솝 떼떼드벨르</strong>
+                    <span>NUOVOPIEL SIGNATURE DAILY CREAM</span>
+                    <p>건조함으로 지치고 민감한 피부에 보습을 부여하여 촉촉하게 유지</p>
+
+                    <a href="#"><span>view</span><span>more</span></a>
+                </div>
+            </div>
+            <div class="swiper-slide slide_box">
+                <figure><img src="img/slide_02.jpg" alt="main2"></figure>
+                <div class="txts">
+                    <h2>HAND CREAM</h2>
+                    <strong>더로즈가드너 핸드크림 50ml</strong>
+                    <span>NUOVOPIEL SIGNATURE DAILY CREAM</span>
+                    <p>건조함으로 지치고 민감한 피부에 보습을 부여하여 촉촉하게 유지</p>
+
+                    <a href="#"><span>view</span><span>more</span></a>
+                </div>
+            </div>
+            <div class="swiper-slide slide_box">
+                <figure><img src="img/slide_03.jpg" alt="main3"></figure>
+                <div class="txts">
+                    <h2>DIffUSER</h2>
+                    <strong>더 로즈가드너 퍼퓸 디퓨저 SET</strong>
+                    <span>NUOVOPIEL SIGNATURE DAILY CREAM</span>
+                    <p>건조함으로 지치고 민감한 피부에 보습을 부여하여 촉촉하게 유지</p>
+
+                    <a href="#"><span>view</span><span>more</span></a>
+                </div>
+            </div>
+            <div class="swiper-slide slide_box">
+                <figure><img src="img/slide_04.jpg" alt="main4"></figure>
+                <div class="txts">
+                    <h2>SPRAY</h2>
+                    <strong>더 로즈가드너 퍼퓸 스프레이 30m</strong>
+                    <span>NUOVOPIEL SIGNATURE DAILY CREAM</span>
+                    <p>건조함으로 지치고 민감한 피부에 보습을 부여하여 촉촉하게 유지</p>
+
+                    <a href="#"><span>view</span><span>more</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- Add Arrows -->
+      
+            <div class="swiper-button-next next ">다음</div>
+            <div class="swiper-button-prev prev ">이전</div>
+       
+
+    </div>
+
+
+    <section id="sec05">
+        <ul>
+            <li class="scroll_on type_left">
+                <figure><img src="img/sec05_01.jpg" alt="고객상담">
+
+                    <div class="sec05_txt">
+                        <strong>고객상담</strong>
+                        <p>063.247.8004</p>
+                        <span>월요일~금요일(토요일, 공휴일 휴무)</span>
+                    </div>
+                </figure>
+            </li>
+            <li class="scroll_on type_right">
+                <figure><img src="img/sec05_02.jpg" alt="이벤트">
+
+                    <div class="sec05_txt">
+                        <strong>이벤트</strong>
+                        <p>플로레비다 신규런칭 이벤트</p>
+                        <a href="#">view more</a>
+                    </div>
+                </figure>
+            </li>
+        </ul>
+    </section>
+
+
+    <section id="sec04">
+        <figure><img src="img/main_01.jpg" alt=""></figure>
+    </section>
+
+    <footer>
+        <div class="row_c">
+            <figure class="logo"><img src="img/footer_logo.png" alt="플로레비다" /></figure>
+            <div>
+                <span>플로레비다</span>
+                <address>전북특별자치도 전주시 덕진구 견원로 302, 2층</address>
+                <span>T. 063.247.8004</span>
+                <span>F.02.556.7755</span>
+                <p id="copyright">Copyright ⓐ 2024 Florevida All Rights Reserved</p>
+            </div>
+            <div class="f_icon">
+                <ul>
+                    <span>ABOUT US</span>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="dist/js/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.sw1', {
+            slidesPerView: 1, //보여지는 슬라이드 개수
+            spaceBetween: 30, //슬라이드 사이 공간
+            loop: true,  // 반복 슬라이드
+            keyboard: {
+                enabled: true,  //키보드 제어
+            },
+            /* autoplay: {
+                delay: 10000, // 4초마다 슬라이드
+                disableOnInteraction: true, //버튼 제어시 멈춤
+            }, */
+            pagination: {
+                el: '.sw1 .swiper-pagination',
+                clickable: true, //블릿버튼 제어
+            },
+            navigation: { //이전다음버튼 제어
+                nextEl: '.sw1 .next',
+                prevEl: '.sw1 .prev',
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>

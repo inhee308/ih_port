@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백산수 main</title>
+    <!-- 자바스크립트 라이브러리인 jQuery 불러오기 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/navi.js"></script>
+
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/back_style.css">
+    <script>
+        //JQuery 시작
+
+
+        $(function () {
+
+        
+
+                    /* 이미지 활성화 스크립트 */
+                    $('#reason .reason_img figure').eq(0).addClass('active');
+                    $('#reason .reason_text p').eq(0).show();;
+
+
+                    $('#reason .reason_img figure').mouseenter(function () {
+                        var idx = $(this).index();
+
+                        $('#reason .reason_img figure').removeClass('active');
+                        $(this).addClass('active');
+
+                        // var ex = $('#reason .reason_text p').eq(idx)
+                        $('#reason .reason_text p').not(idx).css('visibility', 'hidden');
+                        $('#reason .reason_text p').eq(idx).css('visibility', 'visible');
+
+                    });
+
+
+                    /* 이미지 그림자효과 */
+
+                    $('#sec_2 ul li').mouseenter(function () {
+
+                        var sec_2_idx = $(this).index();
+                        $('#sec_2 ul li a div').eq(sec_2_idx).addClass('shadow').css('transform', 'translateY(-20px)');
+
+
+                    }).mouseleave(function () {
+                        $('#sec_2 ul li a div').removeClass('shadow');
+                    });
+
+
+                    //SNS 자세히 보기 
+
+                    $('.sns_list ul li a').mouseenter(function () {
+                        $('.sns_list ul li a > div').removeClass('sns_bg');
+                        $(this).find('div').addClass('sns_bg');
+
+                        $('.sns_list ul li a > span').removeClass('sns_show').hide();
+                        $(this).find('span').addClass('sns_show').show();
+
+                    });
+
+                
+          
+
+
+
+
+
+
+            // 날짜 new 아이콘 생성
+            const date = new Date();
+
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+
+            var datetime = year + '.0' + month;
+
+            console.log(datetime);
+
+            var arrRow = $('#sec_4 li');
+            for (var i = 0; i < arrRow.length; i++) {
+                var row = arrRow[i];
+                if( $(row).find("span.new_date").text().startsWith(datetime) ){
+                    $(row).find('div span.new_icon').css("visibility", "visible");
+                }else{
+                    $(row).find('div span.new_icon').css("visibility", "hidden");
+                }
+            }
+         
+
+            $('#sec_4 li').each(function(){
+                if( $(this).find("span.new_date").text().startsWith(datetime) ){
+                    $(this).find('div span.new_icon').css("visibility", "visible");
+                }else{
+                    $(this).find('div span.new_icon').css("visibility", "hidden");
+                }
+            });
+        
+
+        }); //JQuery 종료
+    </script>
+
+</head>
+
+<body>
+    <header id="gnb">
+        <div id="navi_wrap" class="row_c">
+            <div id="logo"><a href="#"><img src="img/main/logo.png" alt="천지차이백산수"></a>
+            </div><!-- logo -->
+
+            <!-- 모바일 헤더의 로그인, 모바일 메뉴 아이콘 -->
+
+            <div id="mb_btn">
+                <span class="material-symbols-outlined">menu</span>
+            </div><!-- mb_btn -->
+
+
+            <!-- 모바일 네비게이션 어두운 배경, 닫기버튼 -->
+            <div id="mb_navi_bg">
+                <div class="mb_close">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+
+            <!-- 모바일 네비게이션 복사 영역 -->
+            <div id="mb_navi">
+                <nav class="mb_navi_wrap">
+                    <!-- pc:#navi = mobile navi copy : .mb_navi_wrap 안의 ul -->
+                </nav>
+            </div>
+
+            <!-- pc 네비게이션 -->
+            <nav id="navi">
+                <ul class="main_navi">
+                    <li><!-- 1 -->
+                        <a href="#"><span>브랜드스토리</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">천지차이백산수</a></li>
+                                <li><a href="#">건강한백산수</a></li>
+                                <li><a href="#">안전한백산수</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 2 -->
+                        <a href="#"><span>제품</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">백산수용량</a></li>
+                                <li><a href="#">백산수무라벨</a></li>
+                                <li><a href="#">소아환아희망라벨</a></li>
+                                <li><a href="#">제품주문</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 3 -->
+                        <a href="#"><span>라이프스타일</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">태생부터천지차이</a></li>
+                                <li><a href="#">커피와함께백산수</a></li>
+                                <li><a href="#">백산수사용카페</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 4 -->
+                        <a href="#"><span>홍보</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">TV - CF</a></li>
+                                <li><a href="#">SNS</a></li>
+                                <li><a href="#">해피해피캠페인</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 5 -->
+                        <a href="#"><span>커뮤니티</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">자주하는질문</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </div><!-- navi_wrap -->
+        <!-- 배경 -->
+        <div id="navi_bg"></div>
+        </div>
+    </header>
+
+    <!-- 동영상 /////////////////////////////-->
+    <div id="video_box">
+        <video muted autoplay loop>
+            <source src="img/main/main_v.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- 천지차이나는 이유 ///////////////////////////-->
+    <section id="sec_1">
+        <div id="reason" class="row_c">
+            <hgroup>
+                <h1>
+                    <span>백산수</span>
+                    <span>가</span>
+                    <span>천지차이</span>
+                    <span>나는 진짜 이유!</span>
+                </h1>
+                <h2>
+                    <span>백산수는</span>
+                    <span>자연과 시간이 빚어낸 물</span><span>이에요</span>
+                </h2>
+            </hgroup>
+            <div class="reason_cont">
+                <div class="reason_img">
+                    <figure>
+                        <img src="img/main/reason_1.jpg" alt="화산암반층이오랜세월 거르고 거른 물">
+                    </figure>
+
+                    <figure>
+                        <img src="img/main/reason_2.jpg" alt="백두산청정원시림 보호구역">
+                    </figure>
+
+                    <figure>
+                        <img src="img/main/reason_3.jpg" alt="용천수">
+                    </figure>
+                </div>
+                <div class="reason_text">
+                    <p>
+                        <span class="blue">백두산</span>
+                        <span>화산 암반층이 오랜 세월 거르고 거른 물</span>
+                    </p>
+                    <p>
+                        <span>태곳적부터 지켜온</span>
+                        <span class="blue"> 백두산 청정원시림 보호구역</span>
+                    </p>
+                    <p>
+                        <span>자연의 힘으로 스스로 솟아나는</span>
+                        <span class="blue">용천수</span>
+                    </p>
+                </div>
+            </div><!-- reason_cont -->
+        </div><!-- reason -->
+    </section>
+
+    <!-- 백산수를 소개합니다//////////////////////////////// -->
+    <section id="sec_2">
+        <div class="prod row_c">
+            <h1>
+                <div>
+                    <span class="sky">백산수</span><span>를 소개합니다</span>
+                </div>
+
+            </h1>
+            <div class="prod_text">
+                <p><span>살아있는 화산암반</span><span class="blue">용천수</span></p>
+                <p><span> 백두산 청정 시림 보호구역에서</span></p>
+                <p><span class="blue">스스로 솟아나요</span></p>
+
+            </div>
+
+            <div>
+                <ul>
+                    <li>
+                        <div class="ballon">
+                            <figure><img src="img/main/ballon.png" alt="스페셜에디션출시"></figure>
+                        </div>
+                        <a href="#">
+                            <figure><img src="img/main/product_01.png" alt="디즈니스페셜에디션"></figure>
+                            <div></div>
+                            <p class="pro_icon">디즈니 스페셜에디션</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <figure><img src="img/main/product_02.png" alt="소아암 환아 희망라벨"></figure>
+                            <div></div>
+                            <p class="pro_icon">소아암 환아희망라벨</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <figure><img src="img/main/product_03.png" alt="백산수무라벨"></figure>
+                            <div></div>
+                            <p class="pro_icon">백산수 무라벨</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- prod -->
+    </section><!--sec_2  -->
+
+    <section id="sec_3">
+        <div class="sns row_c">
+            <h1>
+                <div>
+                    <span class="sky">MORE</span>
+                    <span>STORY</span>
+                </div>
+            </h1>
+            <div class="sns_text">
+                <p><span class="blue">백산수</span><span>가 묻는 이야기... 앞으로도 우리가 </span><span class="blue">함께할 이야기</span></p>
+            </div>
+            <div class="sns_list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div><!-- 오버시 어두운 배경 --></div>
+                            <span>자세히보기 > </span>
+                            <figure>
+                                <img src="img/main/sns1.jpg" alt="딴없백있">
+                            </figure>
+                            <img class="sns_logo" src="img/main/sns_logo.png" alt="인스타그램로고">
+
+                            <p>#딴업백있#미네랄이살아있는물#백산수</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div></div>
+                            <span>자세히보기 > </span>
+                            <figure>
+                                <img src="img/main/sns2.jpg" alt="어린이날이벤트">
+                            </figure>
+                            <img class="sns_logo" src="img/main/sns_logo.png" alt="인스타그램로고">
+
+                            <p>#백산수이벤트#어린이날#딸기바나나킥</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div></div>
+                            <span>자세히보기 > </span>
+                            <figure>
+                                <img src="img/main/sns3.jpg" alt="백산수데이">
+                            </figure>
+                            <img class="sns_logo" src="img/main/sns_logo.png" alt="인스타그램로고">
+
+                            <p>#백산수day#백산수와함께피크닉가자</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div></div>
+                            <span>자세히보기 > </span>
+                            <figure>
+                                <img src="img/main/sns4.jpg" alt="희망라벨캠페인">
+                            </figure>
+                            <img class="sns_logo" src="img/main/sns_logo.png" alt="인스타그램로고">
+
+                            <p>#천지차이백산수#백산수희망라벨 캠페인</p>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- sns_list -->
+            <div class="slide_btn">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined le_btn">
+                    arrow_back_ios
+                </span>
+            </div>
+            <div>
+                <span class="material-symbols-outlined ri_btn">
+                    arrow_forward_ios
+                </span>
+            </div>
+        </div><!--sns  -->
+    </section><!-- sec_3 -->
+
+    <section id="sec_4">
+        <div class="sec4_box row_c">
+            <div class="sec4_box_inner">
+                <div class="notice">
+                    <div class="notice_title">
+                        <h1>공지사항</h1>
+                        <span><img src="img/main/plus.png" alt="더보기"></span>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="#">백산수 콜센터 휴무안내</a>
+                                <span class="new_icon">NEW</span>
+                            </div>
+                            <span class="new_date">2024.06.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수 출석체크 프로모션 오픈!</a>
+                                <span class="new_icon">NEW</span>
+                            </div>
+                            <span class="new_date">2024.06.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">2024년 백산수 4+1 증정행사</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.06.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수 가정배달 서비스 이용약관안내</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.05.15</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수 출석체크 프로모션 오픈!</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.04.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수 콜센터 휴무안내</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.02.10</span>
+                        </li>
+                    </ul>
+                </div><!-- notice -->
+                <div class="faq">
+                    <div class="faq_title">
+                        <h1>FAQ</h1>
+                        <span><img src="img/main/plus.png" alt="더보기"></span>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="#">백산수의 수원지는 어디인가요?</a>
+                                <span class="new_icon">NEW</span>
+                            </div>
+                            <span class="new_date">2024.06.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">중국에서 생산하는데 안전상의 문제는 없나요?</a>
+                                <span class="new_icon">NEW</span>
+                            </div>
+                            <span class="new_date">2024.06.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수는 무슨 뜻인가요?</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.05.31</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">페트병 벽면에 기포가 보여요</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.05.25</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">백산수를 배송해서 마시고 싶어요</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.05.10</span>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#">유통기한이 잘 안보여요</a>
+                                <!-- <span class="new_icon">NEW</span> -->
+                            </div>
+                            <span class="new_date">2024.04.10</span>
+                        </li>
+                    </ul>
+                </div><!-- faq -->
+            </div><!-- sec4_box_inner -->
+            <div class="order_tel">
+                <ul>
+                    <li>
+                        <figure><img src="img/main/tel.png" alt="전화"></figure>
+                        <span>제품주문안내</span>
+                    </li>
+                    <li>
+                        <a href='tel:1800-0103'>1800-0103</a>
+                    </li>
+                    <li>
+                        <img src="img/main/clock.png" alt="시계">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer///////////////////////////// -->
+    <footer>
+        <div class="row_c">
+            <div class="foot_logo">
+                <img src="img/main/foot_logo.png" alt="푸터로고">
+                <span>농심</span>
+            </div>
+            <ul class="foot_text">
+                <li>개인정보처리방침 ㅣ 이메일주소무단수집거부</li>
+                <li>서울특별시 동작구 여의대방로 112 (신대방동) TEL : 080-023-5181 COPYRIGHTⓒNONGSHIM.CO.LTD All Rights Reserved </li>
+                <li>사업자등록번호 : 118-81-03914 ㅣ 통신판매업 신고번호 : 04-680-429 ㅣ 대표이사 : 이병학 </li>
+            </ul>
+            <div class="foot_pro">
+                <img src="img/main/foot_pro.png" alt="백산수생수">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

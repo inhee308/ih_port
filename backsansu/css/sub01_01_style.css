@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+
+/* 브랜드스토리 시작//////////////////////// */
+#brandstory{
+    padding-top: 150px;
+}
+#brandstory .brandstory_wrap > p {
+    text-align: right;
+    margin-bottom: 50px;
+}
+#brandstory h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #333;
+}
+#brandstory h3{
+    text-align: center;
+    color: #91a6b1;
+    margin-bottom: 85px;
+}
+#brandstory .brandstory_wrap ul li{   
+   width: 80%;
+   margin: 0 auto; 
+   margin-bottom: 50px; 
+}
+#brandstory .brandstory_wrap ul li:last-child{
+    padding-bottom: 50px;
+}
+#brandstory .brandstory_wrap ul li img{
+    width: 100%;
+}
+#brandstory .brandstory_wrap ul li figure{
+    margin-bottom: 30px;
+}
+#brandstory .brandstory_wrap ul li .brand_tit{
+   font-size: 35px;
+   color: #444;
+   font-weight: 500;
+   margin-bottom: 10px;
+}
+
+#brandstory .brandstory_wrap ul li p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.blue{
+    color: #30698d;
+    font-weight: 500;
+}
+.skytblue{
+    color: #6f9ad7;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+
+/* 반응형 스타일 /////////////////////////// */
+
+@media screen and (max-width:768px){
+    #brandstory .brandstory_wrap ul li{   
+        width: 100%;
+     }
+    #brandstory{
+        padding-top: 90px;
+    }
+    
+    #brandstory .brandstory_wrap > p{
+        margin-right: 20px;
+    }
+    #brandstory .brandstory_wrap ul li .brand_tit{
+        font-size: 30px;
+    }
+    #brandstory .brandstory_wrap ul li .brand_tit span{
+        display: block;
+    }
+    #brandstory .brandstory_wrap ul li p{
+        font-size: 18px;
+    }
+    .brandstory_list li:nth-child(2) .brand_tit > span:first-child{
+        display: block;
+    }
+    .brandstory_list li:nth-child(3) .brand_tit > span:first-child{
+        display: block;
+    }
+    #brandstory .brandstory_wrap ul li p {
+        margin: 0 20px;
+    }
+    
+    
+}
+@media screen and (max-width:420px){
+    #brandstory .brandstory_wrap ul li .brand_tit {
+        font-size: 23px;
+    }
+    #brandstory .brandstory_wrap ul li p {
+        font-size: 16px;       
+    }
+    .skytblue{
+        font-size: 15px;
+        font-weight: normal;
+    }
+    #brandstory h3{
+        margin-bottom: 40px;
+    }
+   
+}

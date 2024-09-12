@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+body{
+    background: #efefef;
+    margin-bottom: 200px;
+}
+
+.row_c{
+    max-width: 1240px;
+    margin: 0 auto;
+    
+}
+
+/* header ////////////////////////////////// */
+
+.logo{
+    position: absolute;
+    top:35px;
+    left: 30px; 
+    width: 150px;       
+}
+.logo img{
+    width: 100%;
+}
+header nav{
+    position: absolute;
+    top:0;
+    left: 50%;  
+    transform:translateX(-50%);
+    width: 1280px;
+    z-index: 999;
+}
+.main_navi  ul{
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    margin-left: 10%;
+    
+}
+.main_navi li{  
+    width: 20%;  
+    height: 100%;     
+}
+.main_navi li:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 16px;
+    color: #fff;
+}
+
+.main_navi li a{
+    display: block;
+    text-align: center;
+    padding: 60px 0 15px 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight:500;   
+}
+
+/* 서브메뉴 */
+.sub_container{
+    display: none;
+}
+.sub_navi {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+    height: 145px;
+}
+.sub_navi ul{  
+    width: 20%;  
+}
+.sub_navi li:hover a{
+    color: #68F6FF;
+    font-weight: 400;
+}
+.sub_navi li a{
+    display: block;
+    text-align: center;
+    padding:5px 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight:300;  
+}
+.bg{
+    height: 145px;
+    background: rgba(52, 95, 148, 0.5); 
+    position: absolute;
+    left: 0;
+    top: 100px;     
+    width: 100%;
+    display: none;
+}
+#video_box{
+    width: 100%;
+    padding-bottom: 150px;
+}
+#video_box video{
+    width: 100%;
+}
+
+
+/* 천지차이나는 진짜 이유 ////////////////// */
+#reason{
+    height: 630px;
+    background: #c2a8a8;
+}
+#reason hgroup{
+    text-align: right;
+}
+#reason h1 span{
+    font-size: 28px;
+    color: #676666;  
+}
+#reason h1 span:nth-child(1){
+    font-size: 36px;
+    color: #459BBF ;
+}
+#reason h1 span:nth-child(3){
+    font-size: 36px;
+    color: #346094 ;
+}
+#reason h2{
+    margin-right: 20px;
+    padding-bottom: 150px;
+}
+#reason h2 span{
+    font-size: 16px;
+    color: #676666;  
+}
+#reason h2 span:nth-child(2){
+    color: #346094 ;
+    
+}
+.reason_img{
+    display: flex;
+    height: 253px;
+}
+.reason_img figure{
+    width: 33.333%;   
+}
+.reason_img figure img{
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+}
+.reason_img figure img:hover{
+    scale: 1.1;
+    box-shadow: 5px 5px 5px rgb(92, 92, 92);
+    margin-bottom: 25px;
+}
+.reason_img p{
+    display: none;
+}
+.reason_img p.on{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+}

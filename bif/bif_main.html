@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="kp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIF - 보루네오</title>
+
+    <!-- 자바스크립트 불러오기 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/navi.js"></script>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/main/logo.jpg">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bif_style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR&family=Sunflower:wght@300&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+
+    <script>
+        //JQuery 시작
+        $(function () {
+
+            /* 스크롤시 활성화 */
+
+            $(window).scroll(function () {
+                var scrollTop = $(window).scrollTop();
+
+                // 각 요소에 대한 처리를 배열로 관리
+                var elements = ['#gnb,.sec02_text', '.sec02_text_02', '#sec_03 .sec_03_cont hgroup', '.sec04_box .box_cont', '.sec_05_title h1', '.sec_05_title h2'];
+
+                elements.forEach(function (selector) {
+                    var element = $(selector);
+                    var elementOffset = element.offset().top;
+                    var elementHeight = element.height();
+
+                    // 요소가 화면에 나타날 때 처리
+                    if (scrollTop > elementOffset - $(window).height() + elementHeight / 2) {
+                        if (!element.hasClass('active')) {
+                            element.addClass('active');
+                        }
+                        } else {
+                            element.removeClass('active'); 
+                    }
+                });
+            });
+
+
+        }); //JQuery 종료
+    </script>
+</head>
+
+<body>
+    <header id="gnb">
+        <div id="navi_wrap" class="row_c">
+            <div id="logo"><a href="bif_main.html"><img src="img/main/logo.png" alt="보루네오로고"></a>
+            </div><!-- logo -->
+
+            <!-- pc 네비게이션 -->
+            <nav id="navi">
+
+                <ul class="main_navi">
+                    <li><!-- 1 -->
+                        <a href="#"><span>보루네오</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">사업영역</a></li>
+                                <li><a href="#">경영방침</a></li>
+                                <li><a href="#">기업가치</a></li>
+                                <li><a href="#">수상경력</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 2 -->
+                        <a href="#"><span>윤리경영</span></a>
+                    </li>
+                    <li><!-- 3 -->
+                        <a href="#"><span>투자정보</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">회사개요</a></li>
+                                <li><a href="#">재무제표</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><!-- 4 -->
+                        <a href="#"><span>디자인연구소</span></a>
+                        <nav class="sub_navi">
+                            <ul>
+                                <li><a href="#">개요</a></li>
+                                <li><a href="#">연구개발</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+            <div class="selBox">
+                <select>
+                    <option value="korea">KOR</option>
+                    <option value="english">ENG</option>
+                </select>
+                <div><span class="material-symbols-outlined">
+                        language
+                    </span></div>
+            </div>
+
+            <!-- 모바일 헤더의 로그인, 모바일 메뉴 아이콘 -->
+            <div id="mb_menu">
+                <div id="mb_btn">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </div>
+            </div>
+
+        </div><!-- navi_wrap -->
+
+        <!-- 모바일 네비게이션 어두운 배경, 닫기버튼 -->
+        <div id="mb_navi_bg">
+            <div>
+                <div id="logo"><a href="bif_main.html"><img src="img/main/logo.png" alt="보루네오로고"></a>
+                </div><!-- logo -->
+                <div class="mb_close">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+            <!-- 모바일 네비게이션 복사 영역 -->
+            <div id="mb_navi">
+                <nav class="mb_navi_wrap">
+                    <!-- pc:#navi = mobile navi copy : .mb_navi_wrap 안의 ul -->
+                </nav>
+            </div>
+        </div>
+
+        <!-- 배경 -->
+        <div id="navi_bg"></div>
+
+    </header>
+
+    <section id="sec_01_bg">
+        <div id="sec_01" class="row_c">
+            <div class="sec01_le">
+                <div class="sec01_img">
+                    <figure><img src="img/main/logo.png" alt="로고"></figure>
+                    <h2><span>보루네오로</span><span> 새롭게 태어났습니다</span></h2>
+                </div>
+                <div class="sec01_text">
+                    <p>수 년여에 걸친 소비자 조사를 통해
+                    <p>고객이 원하는 BIF보루네오의 미래를 담았습니다</p>
+                    <p>앞으로도 고객의 마음을 채워나가겠습니다</p>
+                </div>
+                <div class="sec01_btn">
+                    <p>자세히보기</p>
+                    <figure><img src="img/main/arrow.png" alt="자세히보기"></figure>
+                </div>
+            </div>
+            <div class="sec01_ri">
+                <figure>
+                    <img src="img/main/main_01.png" alt="침실협탁">
+                    <div>
+                        <img src="img/main/main_01_bg.png" alt="협탁이미지배경">
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg_gr">
+        <div id="sec_02" class="row_c">
+            <div class="sec02_le">
+                <figure><img src="img/main/main_03.JPG" alt="쇼파"></figure>
+                <p></p>
+            </div>
+            <div class="sec02_ri">
+                <figure><img src="img/main/main_02.JPG" alt="침대"></figure>
+            </div>
+            <div class="sec02_text">
+                <h3>The most beautiful,</h3>
+                <h3>The most functional,</h3>
+                <h3>The most scientific</h3>
+            </div>
+            <div class="sec02_text_02">
+                <p>
+                    <span>가장 아름답고,</span>
+                    <span> 가장 기능적이며,</span>
+                    <span>가장 과학적으로</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg">
+        <div id="sec_03" class="row_c">
+            <div class="bg-circle">
+                <div class="sec_03_cont">
+                    <div>
+                        <figure><img src="img/main/logo.png" alt="로고"></figure>
+                        <hgroup>
+                            <h2>보루네오의 윤리경영</h2>
+                            <!-- <h3>윤리경영을 실천합니다</h3> -->
+                        </hgroup>
+                    </div>
+                    <!-- <figure><img src="img/main/main_04.png" alt="침실"></figure> -->
+                    <!-- <div class="sec_03_cont2">
+                    <div class="sec03_btn">
+                        <p>자세히보기&nbsp;&nbsp;> </p>
+                    </div>
+                    <div>
+                        <p>존경받는 기업은 상호신뢰에서 시작됩니다</p>
+                        <p>그 신뢰는 기업스스로 높은 윤리규정을 정하고 이를 실천할 때 만들어집니다</p>
+                    </div>
+                </div> -->
+
+                    <section id="sec_04" class="row_c">
+                        <div class="sec04_wrap">
+                            <div class="sec04_box">
+                                <div class="box_cont">
+                                    <div><span class="material-symbols-outlined">
+                                            diversity_3
+                                        </span>
+                                        <span class="material-symbols-outlined">
+                                            emergency
+                                        </span>
+                                    </div>
+                                    <strong>고객만족경영</strong>
+                                    <div class="cont4_text">
+                                        <p>
+                                            <strong>디자인</strong> 
+                                            <span>Good Design</span><br>
+                                            <strong>가격</strong> 
+                                            <span>Low Price</span><br>
+                                            <strong>평생고객</strong> 
+                                            <span>Life Long</span>
+                                        </p>
+                                    </div>
+    
+                                    <div class="sec04_btn">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/main/arrow.png" alt="자세히보기">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="box_cont">
+                                    <div><span class="material-symbols-outlined">
+                                            speed
+                                        </span>
+                                        <span class="material-symbols-outlined">
+                                            emergency
+                                        </span>
+                                    </div>
+                                    <strong>속도경영</strong>
+                                    <div class="cont4_text">
+                                        <p><strong>적기에</strong> 
+                                            <span>Timely</span><br>
+                                            <strong>한번에</strong> 
+                                            <span>One-Shot</span><br>
+                                            <strong>신속히</strong> 
+                                            <span>Promptly</span>
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="sec04_btn">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/main/arrow.png" alt="자세히보기">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="box_cont">
+                                    <div><span class="material-symbols-outlined">
+                                            finance_mode
+                                        </span>
+                                        <span class="material-symbols-outlined">
+                                            emergency
+                                        </span>
+                                    </div>
+                                    <strong>지속가능경영</strong>
+                                    <div class="cont4_text">
+                                        <p><strong>종업원에게 복지를</strong><br>
+                                            <strong>경영에 윤리를</strong><br>
+                                            <strong>사회에 공헌을</strong> 
+                                        </p>
+                                    </div>
+                                    <!-- <p>
+                                        <br>
+                                        <br>
+                                        
+                                    </p> -->
+                                    <div class="sec04_btn">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/main/arrow.png" alt="자세히보기">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+    </section>
+
+    </div>
+    </div>
+    </section>
+
+    <section id="sec_05">
+        <div class="sec05wrap row_c">
+            <div class="sec_05_le">
+                <hgroup class="sec_05_title">
+                    <h1>Qualified and Safe</h1>
+                    <h2>Furniture</h2>
+                    <h3>
+                        믿고 쓸 수 있는 안전하고 편리한 명품 가구
+                    </h3>
+                </hgroup>
+                <div class="sec05_btn">
+                    <p>보루네오 SHOP</p>
+                    <figure><img src="img/main/arrow.png" alt="보루네오 SHOP"></figure>
+                </div>
+            </div>
+            <div class="sec_05_ri">
+                <img src="img/main/main_05.jpg" alt="옷장">
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="sec_06">
+        <figure><img src="img/main/main_04.png" alt="침대"></figure>
+        <div class="sec06_text">
+            <p>BEAUTIFUL FURNITURE STORY</p>
+            <p>BIF 보루네오</p>
+        </div>
+    </section>
+
+    <!--footer/////////////////////////  -->
+    <footer>
+        <div class="row_c">
+            <div class="foot_logo">
+                <figure><img src="img/main/foot_logo.png" alt="보루네오로고"></figure>
+                <span>보루네오</span>
+            </div>
+            <ul class="foot_text">
+                <li>상호 : (주)보루네오가구 ｜ 대표 : 김삼기 ｜ 고객센터 : 1577-8066 ｜ 사업자등록번호 : 139-81-00705 ｜</li>
+                <li>주소 : 인천광역시 남동구 논고개로 101 (아름다운타워 11층) (주)보루네오가구 ｜ 통신판매업신고 : 제 2005-인천남동구-0085호 ｜ </li>
+                <li>개인정보 책임자 : 김삼기 ｜ 이메일 : borneo@nate.com</li>
+                <li>Copyright&copy;BIF 보루네오가구 All rights reserved</li>
+            </ul>
+        </div>
+        <div class="sns_box">
+            <div>
+                <a href="#"><span class="sns_01">인스타그램</span></a>
+            </div>
+            <div>
+                <a href="#"><span class="sns_02">유튜브</span></a>
+            </div>
+            <div>
+                <a href="#"><span class="sns_03">페이스북</span></a>
+            </div>
+            <div>
+                <a href="#"><span class="sns_04">네이버블로그</span></a>
+            </div>
+            <div>
+                <a href="#"><span class="sns_05">네이버카페</span></a>
+            </div>
+            <div>
+                <a href="#"><span class="sns_06">카카오톡</span></a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
