@@ -2514,13 +2514,9 @@ body:after {
 /* Isotope*/
 .item {
   border: none;
+  margin-bottom: 30px !important;
 }
-.item img {
-  width: 100%; /* 부모 요소의 너비에 맞추기 */
-  height: auto; /* 부모 요소의 높이에 맞추기 */
-  object-fit: cover; /* 비율을 유지하면서 자르기 */
-  display: block;
-}
+
 .item .item-wrap {
   display: block;
   position: relative;
