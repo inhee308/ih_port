@@ -73,7 +73,26 @@
 
     });//JQuery 종료
 
-
+    window.addEventListener('load', function() {
+        // 모든 .item 요소들을 선택
+        var items = document.querySelectorAll('.item');
+        
+        // 각 이미지의 로딩을 기다린 후 레이아웃 재조정
+        items.forEach(function(item) {
+            var img = item.querySelector('img');
+            
+            // 이미지가 완전히 로드된 후 레이아웃을 재조정
+            if (img.complete) {
+                // 강제로 높이를 설정하지 않고, grid/flex로 자동 배치되도록 할 수 있음
+                item.style.height = 'auto'; // 여기에 높이 지정 없이 flex/grid로 자동 조정
+            } else {
+                // 이미지 로딩 중일 때 처리할 로직 (선택 사항)
+                img.onload = function() {
+                    item.style.height = 'auto'; // 이미지 로딩 후 높이 재조정
+                };
+            }
+        });
+    });
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -527,7 +546,7 @@
           <div class="item design col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="images/port/coffe_scroll.png" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/port/coffe_main_re.jpg">
+              <img class="img-fluid" src="images/port/coffe_main_re.">
             </a>
             <p class="center">폴바셋 Pc/Mobile 디자인</p> 
           </div>
