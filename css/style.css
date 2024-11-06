@@ -2519,6 +2519,7 @@ body:after {
   width: 100%; /* 부모 요소의 너비에 맞추기 */
   height: 100%; /* 부모 요소의 높이에 맞추기 */
   object-fit: cover; /* 비율을 유지하면서 자르기 */
+  display: block;
 }
 .item .item-wrap {
   display: block;
