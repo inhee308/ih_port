@@ -2515,7 +2515,11 @@ body:after {
 .item {
   border: none;
 }
-
+.item img {
+  width: 100%; /* 부모 요소의 너비에 맞추기 */
+  height: 100%; /* 부모 요소의 높이에 맞추기 */
+  object-fit: cover; /* 비율을 유지하면서 자르기 */
+}
 .item .item-wrap {
   display: block;
   position: relative;
