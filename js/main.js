@@ -325,18 +325,41 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 
-  var siteIstotope = function() {
-  	/* activate jquery isotope */
-	  var $container = $('#posts').isotope({
-	    itemSelector : '.item',
-	    isFitWidth: true
-	  });
+//   var siteIstotope = function() {
+//   	/* activate jquery isotope */
+// 	  var $container = $('#posts').isotope({
+// 	    itemSelector : '.item',
+// 	    isFitWidth: true
+// 	  });
 
-	  $(window).resize(function(){
-	    $container.isotope({
-	      columnWidth: '.col-sm-3'
-	    });
-	  });
+// 	  $(window).resize(function(){
+// 	    $container.isotope({
+// 	      columnWidth: '.col-sm-3'
+// 	    });
+// 	  });
+
+
+	  var siteIsotope = function() {
+		/* activate jquery isotope */
+		var $container = $('#posts');  // #posts 요소 선택
+	  
+		// imagesLoaded로 이미지가 모두 로드된 후에 실행
+		$container.imagesLoaded(function() {
+		  // 모든 이미지가 로드된 후 Isotope 초기화
+		  $container.isotope({
+			itemSelector: '.item',       // .item 요소 선택
+			isFitWidth: true,            // 아이템 너비 맞추기
+			columnWidth: '.col-sm-3'     // 각 아이템의 너비를 col-sm-3 클래스를 기준으로 설정
+		  });
+		});
+	  
+		// 윈도우 크기 조정 시에도 columnWidth 재조정
+		$(window).resize(function() {
+		  $container.isotope({
+			columnWidth: '.col-sm-3'  // 화면 크기에 따라 columnWidth 재설정
+		  });
+		});
+	  };
 	  
 	  $container.isotope({ filter: '*' });
 
