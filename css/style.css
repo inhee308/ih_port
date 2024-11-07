@@ -3195,7 +3195,12 @@ figure figcaption {
 .section-title.fz32{
   font-size: 32px;
 }
-
+@media (min-width: 1200px) {
+  .h-500{
+    height: 230px !important;
+    background: #ca7979 !important;
+  }
+}
 
 @media screen and (max-width:800px){
   .tab_tit ul {
