@@ -335,7 +335,7 @@ jQuery(document).ready(function($) {
 	  isFitWidth: true
 	});
   
-	// 이미지가 로드되면 레이아웃 갱신
+	// 이미지가 로딩되면 레이아웃 갱신
 	$container.imagesLoaded(function() {
 	  $container.isotope('layout');
 	});
@@ -357,7 +357,28 @@ jQuery(document).ready(function($) {
 	  $('#filters button').removeClass('active');
 	  $(this).addClass('active');
 	});
+  
+	// 스크롤 이벤트 처리: #posts 영역에 도달하면 무조건 레이아웃 재로딩
+	$(window).on('scroll', function() {
+	  var $container = $('#posts');
+	  
+	  // #posts 영역이 화면에 보이면 레이아웃 갱신
+	  if (isElementInViewport($container)) {
+		$container.isotope('layout');  // 레이아웃 강제 갱신
+	  }
+	});
   };
+  
+  // 요소가 화면에 보이는지 확인하는 함수
+  function isElementInViewport(el) {
+	var rect = el[0].getBoundingClientRect();
+	return (
+	  rect.top >= 0 &&
+	  rect.left >= 0 &&
+	  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+	  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+  }
   
   // siteIstotope 함수 호출
   siteIstotope();
