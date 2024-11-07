@@ -325,31 +325,45 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 
+  
+
+
   var siteIstotope = function() {
-  	/* activate jquery isotope */
-	  var $container = $('#posts').isotope({
-	    itemSelector : '.item',
-	    isFitWidth: true
+	/* activate jquery isotope */
+	var $container = $('#posts').isotope({
+	  itemSelector: '.item',
+	  isFitWidth: true
+	});
+  
+	// 이미지가 로드되면 레이아웃 갱신
+	$container.imagesLoaded(function() {
+	  $container.isotope('layout');
+	});
+  
+	// 윈도우 리사이즈 시 레이아웃 재계산
+	$(window).resize(function() {
+	  $container.isotope({
+		columnWidth: '.col-sm-3'
 	  });
-
-	  $(window).resize(function(){
-	    $container.isotope({
-	      columnWidth: '.col-sm-3'
-	    });
-	  });
-	  
-	  $container.isotope({ filter: '*' });
-
-	    // filter items on button click
-	  $('#filters').on( 'click', 'button', function() {
-	    var filterValue = $(this).attr('data-filter');
-	    $container.isotope({ filter: filterValue });
-	    $('#filters button').removeClass('active');
-	    $(this).addClass('active');
-	  });
-  }
-
+	});
+  
+	// 기본 필터 설정
+	$container.isotope({ filter: '*' });
+  
+	// 필터 버튼 클릭 시 레이아웃 갱신
+	$('#filters').on('click', 'button', function() {
+	  var filterValue = $(this).attr('data-filter');
+	  $container.isotope({ filter: filterValue });
+	  $('#filters button').removeClass('active');
+	  $(this).addClass('active');
+	});
+  };
+  
+  // siteIstotope 함수 호출
   siteIstotope();
+
+
+
 
 
   $('.fancybox').on('click', function() {
