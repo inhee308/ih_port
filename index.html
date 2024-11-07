@@ -70,26 +70,7 @@
         return false;
       });
 
-            window.addEventListener('load', function() {
-        setTopValue(); // 페이지 로드 시 top 값을 설정
-      });
-
-      window.addEventListener('resize', function() {
-        setTopValue(); // 화면 크기 변경 시 top 값을 재설정
-      });
-
-      function setTopValue() {
-        const item = document.querySelector('.item');
-        const width = window.innerWidth;
-
-        if (width >= 1024) {
-          item.style.top = '200px';  // 화면 너비가 1024px 이상일 때 top 값을 200px로 설정
-        } else if (width >= 768) {
-          item.style.top = '150px';  // 화면 너비가 768px 이상일 때 top 값을 150px로 설정
-        } else {
-          item.style.top = '100px';  // 기본 top 값 설정
-        }
-      }
+      
 
 
     });//JQuery 종료
@@ -117,6 +98,8 @@
     
   </script>
 
+  
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -129,6 +112,35 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- 아래에 스타일 추가 -->
+  <style>
+    /* item 요소를 flexbox나 그리드 시스템에 맞게 수정 */
+
+
+    @media (min-width: 576px) {
+      .item {
+        flex: 0 0 40%; /* 모바일 화면에서는 2개씩 배치 */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .item {
+        flex: 0 0 30%; /* 3개씩 배치 */
+      }
+    }
+
+    @media (min-width: 992px) {
+      .item {
+        flex: 0 0 20%; /* 4개씩 배치 */
+      }
+    }
+
+    .item img {
+      width: 100%; /* 이미지를 부모 컨테이너에 맞게 조정 */
+      height: auto; /* 비율에 맞게 높이 조정 */
+    }
+  </style>
 
 </head>
 

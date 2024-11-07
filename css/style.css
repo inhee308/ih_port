@@ -3196,9 +3196,7 @@ figure figcaption {
   font-size: 32px;
 }
 
-#posts {
-  position: relative !important;
-}
+
 @media screen and (max-width:800px){
   .tab_tit ul {
     /* display: block; */
