@@ -3197,8 +3197,8 @@ figure figcaption {
 }
 @media (min-width: 1200px) {
   .h-500{
-    height: 230px !important;
-    background: #ca7979 !important;
+    height: 220px !important;
+    /* background: #ca7979 !important; */
   }
 }
 
