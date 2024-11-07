@@ -70,6 +70,27 @@
         return false;
       });
 
+            window.addEventListener('load', function() {
+        setTopValue(); // 페이지 로드 시 top 값을 설정
+      });
+
+      window.addEventListener('resize', function() {
+        setTopValue(); // 화면 크기 변경 시 top 값을 재설정
+      });
+
+      function setTopValue() {
+        const item = document.querySelector('.item');
+        const width = window.innerWidth;
+
+        if (width >= 1024) {
+          item.style.top = '200px';  // 화면 너비가 1024px 이상일 때 top 값을 200px로 설정
+        } else if (width >= 768) {
+          item.style.top = '150px';  // 화면 너비가 768px 이상일 때 top 값을 150px로 설정
+        } else {
+          item.style.top = '100px';  // 기본 top 값 설정
+        }
+      }
+
 
     });//JQuery 종료
 
