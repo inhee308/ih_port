@@ -2515,10 +2515,6 @@ body:after {
 .item {
   border: none;
   margin-bottom: 30px !important;
-  
-    flex: 1 0 18%;  /* 너비 설정 */
-   
-  
 }
 
 .item .item-wrap {
@@ -3200,6 +3196,9 @@ figure figcaption {
   font-size: 32px;
 }
 
+#posts {
+  position: relative !important;
+}
 @media screen and (max-width:800px){
   .tab_tit ul {
     /* display: block; */
