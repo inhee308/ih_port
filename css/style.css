@@ -2515,6 +2515,10 @@ body:after {
 .item {
   border: none;
   margin-bottom: 30px !important;
+  
+    flex: 1 0 18%;  /* 너비 설정 */
+   
+  
 }
 
 .item .item-wrap {

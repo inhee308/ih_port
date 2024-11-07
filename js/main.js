@@ -325,66 +325,31 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 
-  
-
-
   var siteIstotope = function() {
-	/* activate jquery isotope */
-	var $container = $('#posts').isotope({
-	  itemSelector: '.item',
-	  isFitWidth: true
-	});
-  
-	// 이미지가 로딩되면 레이아웃 갱신
-	$container.imagesLoaded(function() {
-	  $container.isotope('layout');
-	});
-  
-	// 윈도우 리사이즈 시 레이아웃 재계산
-	$(window).resize(function() {
-	  $container.isotope({
-		columnWidth: '.col-sm-3'
+  	/* activate jquery isotope */
+	  var $container = $('#posts').isotope({
+	    itemSelector : '.item',
+	    isFitWidth: true
 	  });
-	});
-  
-	// 기본 필터 설정
-	$container.isotope({ filter: '*' });
-  
-	// 필터 버튼 클릭 시 레이아웃 갱신
-	$('#filters').on('click', 'button', function() {
-	  var filterValue = $(this).attr('data-filter');
-	  $container.isotope({ filter: filterValue });
-	  $('#filters button').removeClass('active');
-	  $(this).addClass('active');
-	});
-  
-	// 스크롤 이벤트 처리: #posts 영역에 도달하면 무조건 레이아웃 재로딩
-	$(window).on('scroll', function() {
-	  var $container = $('#posts');
+
+	  $(window).resize(function(){
+	    $container.isotope({
+	      columnWidth: '.col-sm-3'
+	    });
+	  });
 	  
-	  // #posts 영역이 화면에 보이면 레이아웃 갱신
-	  if (isElementInViewport($container)) {
-		$container.isotope('layout');  // 레이아웃 강제 갱신
-	  }
-	});
-  };
-  
-  // 요소가 화면에 보이는지 확인하는 함수
-  function isElementInViewport(el) {
-	var rect = el[0].getBoundingClientRect();
-	return (
-	  rect.top >= 0 &&
-	  rect.left >= 0 &&
-	  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-	  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
+	  $container.isotope({ filter: '*' });
+
+	    // filter items on button click
+	  $('#filters').on( 'click', 'button', function() {
+	    var filterValue = $(this).attr('data-filter');
+	    $container.isotope({ filter: filterValue });
+	    $('#filters button').removeClass('active');
+	    $(this).addClass('active');
+	  });
   }
-  
-  // siteIstotope 함수 호출
+
   siteIstotope();
-
-
-
 
 
   $('.fancybox').on('click', function() {
